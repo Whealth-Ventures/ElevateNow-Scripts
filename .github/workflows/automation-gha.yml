@@ -43,6 +43,7 @@ jobs:
     - name: Set DISPLAY
       run: echo "DISPLAY=:99" >> $GITHUB_ENV
 
+      
     - name: Grant execute permission for Gradle wrapper
       run: chmod +x gradlew
 
