@@ -43,7 +43,7 @@ jobs:
     - name: Set DISPLAY
       run: echo "DISPLAY=:99" >> $GITHUB_ENV
 
-      
+
     - name: Grant execute permission for Gradle wrapper
       run: chmod +x gradlew
 
@@ -68,4 +68,6 @@ jobs:
       if: always()
       with:
         name: test-report
-        path: app/build/reports/tests/test
+        path: ElevateNow_Automationscripts/report
+  
+
