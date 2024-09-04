@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.Testcase2" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-04T09:14:33" hostname="indianrenterss-MacBook-Pro.local" time="128.896">
+  <properties/>
+  <testcase name="testCase2" classname="org.example.Testcase2" time="128.896"/>
+  <system-out><![CDATA[Initializing the driver
+Start TestCase
+Login performed successfully
+]]></system-out>
+  <system-err><![CDATA[Sep 04, 2024 2:44:34 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 128
+Sep 04, 2024 2:44:34 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 128.0.6613.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
