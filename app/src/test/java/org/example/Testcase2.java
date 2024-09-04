@@ -30,7 +30,7 @@ public class Testcase2 {
         //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
                   // Extent Reports configuration
-                  report=new ExtentReports("/Users/indianrenters/Downloads/ElevateNow_Automationscripts/report/index2.html",true);
+                  report=new ExtentReports("/Users/indianrenters/Downloads/ElevateNow_Automationscripts/report2/index.html",true);
                  // test =report.startTest("ElevateNow Test Suite");
        driver.manage().window().maximize();
     }
