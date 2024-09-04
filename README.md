@@ -22,7 +22,7 @@ Internet connection
 Setup Instructions
 Clone the Repository
 
-git clone https://github.com/Whealth-Ventures/ElevateNow_Automation
+git clone https://github.com/Whealth-Ventures/ElevateNow_Scripts
 
 cd ElevateNow
 
