@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.TestCase3" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-04T09:16:42" hostname="indianrenterss-MacBook-Pro.local" time="177.053">
+<testsuite name="org.example.TestCase3" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-06T10:56:28" hostname="indianrenterss-MacBook-Pro.local" time="232.73">
   <properties/>
-  <testcase name="testCase3" classname="org.example.TestCase3" time="177.053"/>
+  <testcase name="testCase3" classname="org.example.TestCase3" time="232.73"/>
   <system-out><![CDATA[Initializing the driver
 Start TestCase
 Login performed successfully
 ]]></system-out>
-  <system-err><![CDATA[Sep 04, 2024 2:46:43 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[Sep 06, 2024 4:26:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 128
-Sep 04, 2024 2:46:43 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 128.0.6613.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Sep 06, 2024 4:26:29 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 128.0.6613.120. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
 </testsuite>

@@ -30,7 +30,7 @@ public class Testcase2 {
         //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
                   // Extent Reports configuration
-                  report=new ExtentReports("/Users/indianrenters/Downloads/ElevateNow_Automationscripts/report2/index.html",true);
+                  report=new ExtentReports("/Users/indianrenters/Downloads/ElevateNow_Automationscripts/report/index.html",true);
                  // test =report.startTest("ElevateNow Test Suite");
        driver.manage().window().maximize();
     }
@@ -66,7 +66,7 @@ public class Testcase2 {
         test = report.startTest("Login"); // Start the test
         System.out.println("Start TestCase");
     test.log(LogStatus.INFO,"Start testcase");
-        String loginUrl = "https://staging.joinelevatenow.co.in/";
+        String loginUrl = "https://preweb.joinelevatenow.co.in/";
     
           // Login phone number (consider using test data management)
        
@@ -80,7 +80,7 @@ public class Testcase2 {
 
         // Wait for 30 seconds to manually enter the OTP
             
-            
+            Thread.sleep(30000);
             WebElement sendOtp=driver.findElement(By.xpath("//*[@class='form-control  coreBtn text-white false']"));
             sendOtp.click();
             Thread.sleep(3000);
@@ -111,11 +111,11 @@ Thread.sleep(3000);
         test = report.startTest("add Regime Question"); // Start the test
         test.log(LogStatus.INFO, "Starting the RegimeQuestions test");
     
-        driver.get("https://staging.joinelevatenow.co.in/dashboard");
+        driver.get("https://preweb.joinelevatenow.co.in/dashboard");
         test.log(LogStatus.INFO, "Navigated to Dashboard");
         Thread.sleep(3000);
     
-        driver.get("https://staging.joinelevatenow.co.in/settings");
+        driver.get("https://preweb.joinelevatenow.co.in/settings");
         test.log(LogStatus.INFO, "Navigated to Settings");
         Thread.sleep(3000);
     
@@ -144,13 +144,13 @@ Thread.sleep(3000);
         test.log(LogStatus.INFO, "Clicked on Attach goal");
         Thread.sleep(2000);
          Thread.sleep(2000);
-    driver.findElement(By.xpath(("//*[@placeholder='Search']"))).sendKeys("Weight Loss");
+    driver.findElement(By.xpath(("//*[@placeholder='Search']"))).sendKeys("Weight");
         List<WebElement> goals = driver.findElements(By.className("rs-highlight"));
         for (WebElement goal : goals) {
-            if (goal.getText().contains("Weight Loss")) {
+            if (goal.getText().contains("Weight")) {
                 Thread.sleep(2000);
                 goal.click();
-                test.log(LogStatus.INFO, "Selected Goal: Weight Loss");
+                test.log(LogStatus.INFO, "Selected Goal: Weight");
                 break;
             }
         }
@@ -211,13 +211,13 @@ Thread.sleep(3000);
         attachGoal1.click();
         test.log(LogStatus.INFO, "Clicked on Attach goal");
         Thread.sleep(2000);
-        driver.findElement(By.xpath(("//*[@placeholder='Search']"))).sendKeys("Test Goals New11");
+        driver.findElement(By.xpath(("//*[@placeholder='Search']"))).sendKeys("Post Meal Walk");
         List<WebElement> goals1 = driver.findElements(By.className("rs-highlight"));
         for (WebElement goal : goals1) {
-            if (goal.getText().contains("Test Goals New11")) {
+            if (goal.getText().contains("Post Meal Walk")) {
                 Thread.sleep(2000);
                 goal.click();
-                test.log(LogStatus.INFO, "Selected Goal: Test Goals New11");
+                test.log(LogStatus.INFO, "Selected Goal: Post Meal Walk");
                 break;
             }
         }
@@ -247,7 +247,7 @@ Thread.sleep(3000);
         test = report.startTest("add Regime Template"); // Start the test
         test.log(LogStatus.INFO, "Starting the addRegimeTemplate test");
     
-        driver.get("https://staging.joinelevatenow.co.in/settings");
+        driver.get("https://preweb.joinelevatenow.co.in/settings");
         test.log(LogStatus.INFO, "Navigated to Settings");
         Thread.sleep(3000);
     
@@ -270,8 +270,8 @@ Thread.sleep(3000);
         Thread.sleep(2000);
     
         WebElement search = driver.findElement(By.xpath("//*[@placeholder='Search']"));
-        search.sendKeys("How often do you eat Dietor healthy food?");
-        test.log(LogStatus.INFO, "Searched for Question: How often do you eat diet or healthy food?");
+        search.sendKeys("Side Effects Faced by the Patient");
+        test.log(LogStatus.INFO, "Searched for Question: Side Effects Faced by the Patient");
         search.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
     
@@ -286,8 +286,8 @@ Thread.sleep(3000);
         Thread.sleep(2000);
     
         WebElement search2 = driver.findElement(By.xpath("//*[@placeholder='Search']"));
-        search2.sendKeys("Junk Food");
-        test.log(LogStatus.INFO, "Searched for Question: Junk Food");
+        search2.sendKeys("Water Intake Goal Achieved Last Week (# Days Last Week)");
+        test.log(LogStatus.INFO, "Searched for Question: Water Intake Goal Achieved Last Week (# Days Last Week)");
         search2.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
     
@@ -302,7 +302,7 @@ Thread.sleep(3000);
         WebElement save = driver.findElement(By.xpath("//div[text()='Save']"));
         save.click();
         test.log(LogStatus.INFO, "Clicked on Save");
-        Thread.sleep(3000);
+        Thread.sleep(6000);
     
         WebElement edit = driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/table/tbody/tr[1]/td[2]/div/div[2]/div[1]/div"));
         edit.click();
@@ -337,11 +337,11 @@ Thread.sleep(3000);
     
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         
-        driver.get("https://staging.joinelevatenow.co.in/dashboard");
+        driver.get("https://preweb.joinelevatenow.co.in/dashboard");
         test.log(LogStatus.INFO, "Navigated to Dashboard");
         Thread.sleep(3000);
     
-        driver.get("https://staging.joinelevatenow.co.in/patient");
+        driver.get("https://preweb.joinelevatenow.co.in/patient");
         test.log(LogStatus.INFO, "Navigated to Patient page");
         Thread.sleep(3000);
     
@@ -352,10 +352,10 @@ Thread.sleep(3000);
         test.log(LogStatus.INFO, "Extracted Patient ID: " + extractedPatientID);
     
         int patientIDInt = Integer.parseInt(extractedPatientID);
-        String adjustedPatientID = String.valueOf(patientIDInt + 5); // Adjust logic as needed
+        String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed
         test.log(LogStatus.INFO, "Adjusted Patient ID: " + adjustedPatientID);
     
-        String patientDashboardUrl = "https://staging.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
+        String patientDashboardUrl = "https://preweb.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
         test.log(LogStatus.INFO, "Navigating to patient dashboard: " + patientDashboardUrl);
         driver.get(patientDashboardUrl);
         Thread.sleep(4000);
@@ -370,7 +370,7 @@ Thread.sleep(3000);
         test.log(LogStatus.INFO, "Clicked on Add Report Card");
         Thread.sleep(2000);
     
-        WebElement select = driver.findElement(By.xpath("//span[text()='Select']"));
+        WebElement select = driver.findElement(By.xpath("//span[text()='Patient Weekly Coach Call Log']"));
         select.click();
         test.log(LogStatus.INFO, "Clicked on Select to choose a template");
         Thread.sleep(2000);
@@ -394,10 +394,10 @@ Thread.sleep(3000);
         WebElement recommendation = driver.findElement(By.xpath("//*[@id='panel0-panel']/div/div/div[1]/div[1]/div[1]/div[3]/div/div/textarea"));
         recommendation.sendKeys("Daily");
         test.log(LogStatus.INFO, "Entered recommendation: Daily");
-        WebElement attachGoal = driver.findElement(By.xpath("//*[@id='panel0-panel']/div/div/div[1]/div[1]/div[1]/div[4]/div/div/div/div/div"));
-        attachGoal.click();
-        test.log(LogStatus.INFO, "Clicked on Attach Goal");
-        Thread.sleep(2000);
+        // WebElement attachGoal = driver.findElement(By.xpath("//*[@id='panel0-panel']/div/div/div[1]/div[1]/div[1]/div[4]/div/div/div/div/div"));
+        // attachGoal.click();
+        // test.log(LogStatus.INFO, "Clicked on Attach Goal");
+        // Thread.sleep(2000);
     
         // WebElement answer2 = driver.findElement(By.xpath("//*[@id='panel0-panel']/div/div/div[1]/div[2]/div[1]/div[2]/div/div/textarea"));
         // answer2.sendKeys("Daily");
@@ -408,8 +408,8 @@ Thread.sleep(3000);
         // test.log(LogStatus.INFO, "Entered recommendation for second question: Very rarely");
         // Thread.sleep(1000);
     
-        driver.findElement(By.xpath("//div[text()='Attach Goal']")).click();
-        test.log(LogStatus.INFO, "Clicked on Attach Goal for the second question");
+        // driver.findElement(By.xpath("//div[text()='Attach Goal']")).click();
+        // test.log(LogStatus.INFO, "Clicked on Attach Goal for the second question");
         Thread.sleep(2000);
     
         WebElement saveDetails = driver.findElement(By.xpath("//div[text()='Save Details']"));

@@ -66,472 +66,512 @@ import com.relevantcodes.extentreports.LogStatus;
     }
 
     private String generateandomDoctor(){
-<span class="fc" id="L69">        String[] name={&quot;Dr.Testdoctor&quot;,&quot;Dr. test1&quot;,&quot;Dr. SampleTest&quot;,&quot;testignDoc&quot;,&quot;Dr.Testdoctor&quot;,&quot;Dr. SampleTest&quot;,&quot;NewDoctor&quot;};</span>
+<span class="fc" id="L69">        String[] name={</span>
+            &quot;Testingn DocSign&quot;,
+            &quot;TestNidaDoc&quot;,
+            &quot;Program Test Doctor&quot;,
+            &quot;Doctor_onlyfortesting&quot;
+        };
 
       
-<span class="fc" id="L72">        Random random=new Random();</span>
-<span class="fc" id="L73">        String doctorName=name[random.nextInt(name.length)];</span>
-<span class="fc" id="L74">        return doctorName;</span>
+<span class="fc" id="L77">        Random random=new Random();</span>
+<span class="fc" id="L78">        String doctorName=name[random.nextInt(name.length)];</span>
+<span class="fc" id="L79">        return doctorName;</span>
+    }
+    public static String getRandomMedicine() {
+<span class="fc" id="L82">        String[] medicineNames = {</span>
+            &quot;Syrup Odomos&quot;,
+            &quot;Injection Nida New&quot;,
+            &quot;Tablet Atorva Asp&quot;,
+            &quot;Tablet Gabapin NT&quot;,
+            &quot;Cream/Ointment Melalumin Ultra&quot;,
+            &quot;Tablet Nurokind Next&quot;,
+            &quot;Tablet Concor COR 2.5 Table&quot;,
+            &quot;Tablet GLUXIT M 10/500&quot;,
+            &quot;Injection APIDRA (GLULISINE)&quot;
+        };
+
+<span class="fc" id="L94">        Random random = new Random();</span>
+<span class="fc" id="L95">        int index = random.nextInt(medicineNames.length);</span>
+<span class="fc" id="L96">        return medicineNames[index];</span>
     }
  private String generateRandomEmail() {
-<span class="fc" id="L77">        String characters = &quot;abcdefghijklmnopqrstuvwxyz1234567890&quot;;</span>
-<span class="fc" id="L78">        StringBuilder email = new StringBuilder();</span>
-<span class="fc" id="L79">        Random random = new Random();</span>
-<span class="fc bfc" id="L80" title="All 2 branches covered.">        while (email.length() &lt; 10) { // length of the random email string</span>
-<span class="fc" id="L81">            int index = random.nextInt(characters.length());</span>
-<span class="fc" id="L82">            email.append(characters.charAt(index));</span>
-<span class="fc" id="L83">        }</span>
-<span class="fc" id="L84">        return email.append(&quot;@gmail.com&quot;).toString();</span>
+<span class="fc" id="L99">        String characters = &quot;abcdefghijklmnopqrstuvwxyz1234567890&quot;;</span>
+<span class="fc" id="L100">        StringBuilder email = new StringBuilder();</span>
+<span class="fc" id="L101">        Random random = new Random();</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        while (email.length() &lt; 10) { // length of the random email string</span>
+<span class="fc" id="L103">            int index = random.nextInt(characters.length());</span>
+<span class="fc" id="L104">            email.append(characters.charAt(index));</span>
+<span class="fc" id="L105">        }</span>
+<span class="fc" id="L106">        return email.append(&quot;@gmail.com&quot;).toString();</span>
     }
 
 private String generateRandomMobileNumber() {
-<span class="fc" id="L88">    Random random = new Random();</span>
-<span class="fc" id="L89">    StringBuilder mobileNumber = new StringBuilder(&quot;9&quot;); // start with 9 for a 10 digit mobile number</span>
-<span class="fc bfc" id="L90" title="All 2 branches covered.">    while (mobileNumber.length() &lt; 10) {</span>
-<span class="fc" id="L91">        int digit = random.nextInt(10);</span>
-<span class="fc" id="L92">        mobileNumber.append(digit);</span>
-<span class="fc" id="L93">    }</span>
-<span class="fc" id="L94">    return mobileNumber.toString();</span>
+<span class="fc" id="L110">    Random random = new Random();</span>
+<span class="fc" id="L111">    StringBuilder mobileNumber = new StringBuilder(&quot;9&quot;); // start with 9 for a 10 digit mobile number</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">    while (mobileNumber.length() &lt; 10) {</span>
+<span class="fc" id="L113">        int digit = random.nextInt(10);</span>
+<span class="fc" id="L114">        mobileNumber.append(digit);</span>
+<span class="fc" id="L115">    }</span>
+<span class="fc" id="L116">    return mobileNumber.toString();</span>
 }
 private static String generateRandomWeight() {
-<span class="fc" id="L97">    Random random = new Random();</span>
-<span class="fc" id="L98">    int weight = 50 + random.nextInt(51); // Random weight between 50 and 100</span>
-<span class="fc" id="L99">    return String.valueOf(weight);</span>
+<span class="fc" id="L119">    Random random = new Random();</span>
+<span class="fc" id="L120">    int weight = 50 + random.nextInt(51); // Random weight between 50 and 100</span>
+<span class="fc" id="L121">    return String.valueOf(weight);</span>
 }
 private static String generateRandomGender() {
-<span class="fc" id="L102">    Random random = new Random();</span>
+<span class="fc" id="L124">    Random random = new Random();</span>
     // Array of possible genders
-<span class="fc" id="L104">    String[] genders = {&quot;Male&quot;, &quot;Female&quot;, &quot;Other&quot;};</span>
+<span class="fc" id="L126">    String[] genders = {&quot;Male&quot;, &quot;Female&quot;, &quot;Other&quot;};</span>
     // Select a random gender from the array
-<span class="fc" id="L106">    int index = random.nextInt(genders.length);</span>
-<span class="fc" id="L107">    return genders[index];</span>
+<span class="fc" id="L128">    int index = random.nextInt(genders.length);</span>
+<span class="fc" id="L129">    return genders[index];</span>
 }
 private static String generateRandomHeight() {
-<span class="fc" id="L110">    Random random = new Random();</span>
-<span class="fc" id="L111">    int height = 150 + random.nextInt(51); // Random height between 150 and 200</span>
-<span class="fc" id="L112">    return String.valueOf(height);</span>
+<span class="fc" id="L132">    Random random = new Random();</span>
+<span class="fc" id="L133">    int height = 150 + random.nextInt(51); // Random height between 150 and 200</span>
+<span class="fc" id="L134">    return String.valueOf(height);</span>
 }
 private static String generateRandomText(int length) {
-<span class="fc" id="L115">    String characters = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;;</span>
-<span class="fc" id="L116">    Random random = new Random();</span>
-<span class="fc" id="L117">    StringBuilder randomText = new StringBuilder();</span>
+<span class="fc" id="L137">    String characters = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;;</span>
+<span class="fc" id="L138">    Random random = new Random();</span>
+<span class="fc" id="L139">    StringBuilder randomText = new StringBuilder();</span>
 
-<span class="fc bfc" id="L119" title="All 2 branches covered.">    while (randomText.length() &lt; length) {</span>
-<span class="fc" id="L120">        int index = random.nextInt(characters.length());</span>
-<span class="fc" id="L121">        randomText.append(characters.charAt(index));</span>
-<span class="fc" id="L122">    }</span>
+<span class="fc bfc" id="L141" title="All 2 branches covered.">    while (randomText.length() &lt; length) {</span>
+<span class="fc" id="L142">        int index = random.nextInt(characters.length());</span>
+<span class="fc" id="L143">        randomText.append(characters.charAt(index));</span>
+<span class="fc" id="L144">    }</span>
 
-<span class="fc" id="L124">    return randomText.toString();</span>
+<span class="fc" id="L146">    return randomText.toString();</span>
 }
 private static String generateRandomAge() {
-<span class="fc" id="L127">    Random random = new Random();</span>
-<span class="fc" id="L128">    int age = 18 + random.nextInt(48); // Random age between 18 and 65</span>
-<span class="fc" id="L129">    return String.valueOf(age);</span>
+<span class="fc" id="L149">    Random random = new Random();</span>
+<span class="fc" id="L150">    int age = 18 + random.nextInt(48); // Random age between 18 and 65</span>
+<span class="fc" id="L151">    return String.valueOf(age);</span>
 }
     public void login() throws InterruptedException {
-<span class="fc" id="L132">        String mobileNumber=&quot;9643243200&quot;;</span>
-<span class="fc" id="L133">        test = report.startTest(&quot;Login&quot;); // Start the test</span>
-<span class="fc" id="L134">        System.out.println(&quot;Start TestCase&quot;);</span>
-<span class="fc" id="L135">    test.log(LogStatus.INFO,&quot;Start testcase&quot;);</span>
-<span class="fc" id="L136">        String loginUrl = &quot;https://staging.joinelevatenow.co.in/&quot;;</span>
+<span class="fc" id="L154">        String mobileNumber=&quot;9643243200&quot;;</span>
+<span class="fc" id="L155">        test = report.startTest(&quot;Login&quot;); // Start the test</span>
+<span class="fc" id="L156">        System.out.println(&quot;Start TestCase&quot;);</span>
+<span class="fc" id="L157">    test.log(LogStatus.INFO,&quot;Start testcase&quot;);</span>
+<span class="fc" id="L158">        String loginUrl = &quot;https://preweb.joinelevatenow.co.in/&quot;;</span>
     
           // Login phone number (consider using test data management)
        
       
-<span class="fc" id="L141">          test.log(LogStatus.INFO, &quot;Navigating to Login URL: &quot; + loginUrl);</span>
-<span class="fc" id="L142">          driver.get(loginUrl);</span>
-<span class="fc" id="L143">       WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));</span>
+<span class="fc" id="L163">          test.log(LogStatus.INFO, &quot;Navigating to Login URL: &quot; + loginUrl);</span>
+<span class="fc" id="L164">          driver.get(loginUrl);</span>
+<span class="fc" id="L165">       WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));</span>
         
-<span class="fc" id="L145">        WebElement phoneInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(&quot;//*[@class='form-control coreInput   undefined ']&quot;)));</span>
-<span class="fc" id="L146">        phoneInput.sendKeys(mobileNumber);</span>
+<span class="fc" id="L167">        WebElement phoneInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(&quot;//*[@class='form-control coreInput   undefined ']&quot;)));</span>
+<span class="fc" id="L168">        phoneInput.sendKeys(mobileNumber);</span>
 
         // Wait for 30 seconds to manually enter the OTP
+<span class="fc" id="L171">            Thread.sleep(30000);</span>
             
+<span class="fc" id="L173">            WebElement sendOtp=driver.findElement(By.xpath(&quot;//*[@class='form-control  coreBtn text-white false']&quot;));</span>
+<span class="fc" id="L174">            sendOtp.click();</span>
+<span class="fc" id="L175">            Thread.sleep(3000);</span>
+<span class="fc" id="L176">      WebElement Number1=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[1]&quot;));</span>
+<span class="fc" id="L177">                Number1.sendKeys(&quot;5&quot;);</span>
+<span class="fc" id="L178">                WebElement Number2=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[2]&quot;));  </span>
+<span class="fc" id="L179">                Number2.sendKeys(&quot;9&quot;);</span>
+<span class="fc" id="L180">                WebElement Number3=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[3]&quot;));</span>
+<span class="fc" id="L181">                Number3.sendKeys(&quot;6&quot;);</span>
+<span class="fc" id="L182">                WebElement Number4=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[4]&quot;));</span>
+<span class="fc" id="L183">                Number4.sendKeys(&quot;9&quot;);</span>
+<span class="fc" id="L184">                WebElement Number5=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[5]&quot;));</span>
+<span class="fc" id="L185">                Number5.sendKeys(&quot;2&quot;);</span>
+<span class="fc" id="L186">                WebElement Number6=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[6]&quot;));</span>
+<span class="fc" id="L187">                Number6.sendKeys(&quot;1&quot;);</span>
             
-<span class="fc" id="L151">            WebElement sendOtp=driver.findElement(By.xpath(&quot;//*[@class='form-control  coreBtn text-white false']&quot;));</span>
-<span class="fc" id="L152">            sendOtp.click();</span>
-<span class="fc" id="L153">            Thread.sleep(3000);</span>
-<span class="fc" id="L154">      WebElement Number1=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[1]&quot;));</span>
-<span class="fc" id="L155">                Number1.sendKeys(&quot;5&quot;);</span>
-<span class="fc" id="L156">                WebElement Number2=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[2]&quot;));  </span>
-<span class="fc" id="L157">                Number2.sendKeys(&quot;9&quot;);</span>
-<span class="fc" id="L158">                WebElement Number3=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[3]&quot;));</span>
-<span class="fc" id="L159">                Number3.sendKeys(&quot;6&quot;);</span>
-<span class="fc" id="L160">                WebElement Number4=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[4]&quot;));</span>
-<span class="fc" id="L161">                Number4.sendKeys(&quot;9&quot;);</span>
-<span class="fc" id="L162">                WebElement Number5=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[5]&quot;));</span>
-<span class="fc" id="L163">                Number5.sendKeys(&quot;2&quot;);</span>
-<span class="fc" id="L164">                WebElement Number6=driver.findElement(By.xpath(&quot;//*[@id='root']/div/div[2]/div/div[3]/div[2]/input[6]&quot;));</span>
-<span class="fc" id="L165">                Number6.sendKeys(&quot;1&quot;);</span>
-            
-<span class="fc" id="L167">            WebElement SignIn=driver.findElement(By.xpath(&quot;//*[@class='form-control  coreBtn text-white undefined']&quot;));</span>
-<span class="fc" id="L168">            SignIn.click();</span>
+<span class="fc" id="L189">            WebElement SignIn=driver.findElement(By.xpath(&quot;//*[@class='form-control  coreBtn text-white undefined']&quot;));</span>
+<span class="fc" id="L190">            SignIn.click();</span>
 
 
-<span class="fc" id="L171">Thread.sleep(3000);</span>
+<span class="fc" id="L193">Thread.sleep(3000);</span>
 
-<span class="fc" id="L173">        System.out.println(&quot;Login performed successfully&quot;);</span>
-<span class="fc" id="L174">    }</span>
+<span class="fc" id="L195">        System.out.println(&quot;Login performed successfully&quot;);</span>
+<span class="fc" id="L196">    }</span>
 public void navigationToDashboard() throws InterruptedException {
     // Login URL (assuming successful login from previous test)
-<span class="fc" id="L177">    test = report.startTest(&quot;navigation to patient dashboard&quot;); // Start the test</span>
-<span class="fc" id="L178">    String dashboardUrl = &quot;https://staging.joinelevatenow.co.in/dashboard&quot;;</span>
+<span class="fc" id="L199">    test = report.startTest(&quot;navigation to patient dashboard&quot;); // Start the test</span>
+<span class="fc" id="L200">    String dashboardUrl = &quot;https://preweb.joinelevatenow.co.in/dashboard&quot;;</span>
 
-<span class="fc" id="L180">    test.log(LogStatus.INFO, &quot;Verifying navigation to dashboard: &quot; + dashboardUrl);</span>
-<span class="fc" id="L181">    driver.get(dashboardUrl);</span>
+<span class="fc" id="L202">    test.log(LogStatus.INFO, &quot;Verifying navigation to dashboard: &quot; + dashboardUrl);</span>
+<span class="fc" id="L203">    driver.get(dashboardUrl);</span>
 
-<span class="fc" id="L183">    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));</span>
-<span class="fc" id="L184">    wait.until(ExpectedConditions.urlToBe(dashboardUrl));</span>
-<span class="fc" id="L185">    test.log(LogStatus.PASS, &quot;URL verified: &quot; + dashboardUrl);</span>
+<span class="fc" id="L205">    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));</span>
+<span class="fc" id="L206">    wait.until(ExpectedConditions.urlToBe(dashboardUrl));</span>
+<span class="fc" id="L207">    test.log(LogStatus.PASS, &quot;URL verified: &quot; + dashboardUrl);</span>
 
-<span class="fc" id="L187">    String actualUrl = driver.getCurrentUrl();</span>
-<span class="fc" id="L188">    Assert.assertEquals(actualUrl, dashboardUrl, &quot;Navigation failed&quot;);</span>
-<span class="fc" id="L189">    test.log(LogStatus.PASS, &quot;Assertion passed. Navigated to dashboard successfully&quot;);</span>
+<span class="fc" id="L209">    String actualUrl = driver.getCurrentUrl();</span>
+<span class="fc" id="L210">    Assert.assertEquals(actualUrl, dashboardUrl, &quot;Navigation failed&quot;);</span>
+<span class="fc" id="L211">    test.log(LogStatus.PASS, &quot;Assertion passed. Navigated to dashboard successfully&quot;);</span>
 
-<span class="fc" id="L191">    System.out.println(&quot;Navigated to the dashboard successfully&quot;); // Can be removed if using ExtentReports logs</span>
-<span class="fc" id="L192">    }</span>
+<span class="fc" id="L213">    System.out.println(&quot;Navigated to the dashboard successfully&quot;); // Can be removed if using ExtentReports logs</span>
+<span class="fc" id="L214">    }</span>
     public void AddNewPatient()throws InterruptedException{
-<span class="fc" id="L194">        randomUsername=generateRandomString();</span>
-<span class="fc" id="L195">        String randomEmail = generateRandomEmail();</span>
-<span class="fc" id="L196">        String randomMobileNumber = generateRandomMobileNumber();</span>
-<span class="fc" id="L197">        String randomgender=generateRandomGender();</span>
-<span class="fc" id="L198">        test = report.startTest(&quot;Adding new Patient entry&quot;); // Start the test</span>
-<span class="fc" id="L199">    test.log(LogStatus.INFO, &quot;Generating random patient details:&quot;);</span>
-<span class="fc" id="L200">    test.log(LogStatus.INFO, &quot;- Username: &quot; + randomUsername);</span>
-<span class="fc" id="L201">    test.log(LogStatus.INFO, &quot;- Email: &quot; + randomEmail);</span>
-<span class="fc" id="L202">    test.log(LogStatus.INFO, &quot;- Mobile Number: &quot; + randomMobileNumber);</span>
-<span class="fc" id="L203">        System.out.println(&quot;Navigating to patient url&quot;);</span>
-<span class="fc" id="L204">        Thread.sleep(3000);</span>
+<span class="fc" id="L216">        randomUsername=generateRandomString();</span>
+<span class="fc" id="L217">        String randomEmail = generateRandomEmail();</span>
+<span class="fc" id="L218">        String randomMobileNumber = generateRandomMobileNumber();</span>
+<span class="fc" id="L219">        String randomgender=generateRandomGender();</span>
+<span class="fc" id="L220">        test = report.startTest(&quot;Adding new Patient entry&quot;); // Start the test</span>
+<span class="fc" id="L221">    test.log(LogStatus.INFO, &quot;Generating random patient details:&quot;);</span>
+<span class="fc" id="L222">    test.log(LogStatus.INFO, &quot;- Username: &quot; + randomUsername);</span>
+<span class="fc" id="L223">    test.log(LogStatus.INFO, &quot;- Email: &quot; + randomEmail);</span>
+<span class="fc" id="L224">    test.log(LogStatus.INFO, &quot;- Mobile Number: &quot; + randomMobileNumber);</span>
+<span class="fc" id="L225">        System.out.println(&quot;Navigating to patient url&quot;);</span>
+<span class="fc" id="L226">        Thread.sleep(3000);</span>
  // Navigate to Patients page
-<span class="fc" id="L206"> String patientUrl = &quot;https://staging.joinelevatenow.co.in/patient&quot;;</span>
-<span class="fc" id="L207"> test.log(LogStatus.INFO, &quot;Navigating to Patients URL: &quot; + patientUrl);</span>
-<span class="fc" id="L208"> driver.get(patientUrl);</span>
+<span class="fc" id="L228"> String patientUrl = &quot;https://preweb.joinelevatenow.co.in/patient&quot;;</span>
+<span class="fc" id="L229"> test.log(LogStatus.INFO, &quot;Navigating to Patients URL: &quot; + patientUrl);</span>
+<span class="fc" id="L230"> driver.get(patientUrl);</span>
     
-<span class="fc" id="L210">      Thread.sleep(5000);</span>
-<span class="fc" id="L211">      System.out.println(&quot;Clicking on add patient button&quot;);</span>
-<span class="fc" id="L212">      WebElement nElement=driver.findElement(By.xpath(&quot;//*[@class='reusableBtnActive  reusableBtn']&quot;));</span>
-<span class="fc" id="L213">      nElement.click();</span>
-<span class="fc" id="L214">    driver.get(&quot;https://staging.joinelevatenow.co.in/patient/new&quot;);</span>
-<span class="fc" id="L215">    System.out.println(&quot;Adding new  patient entry&quot;);</span>
+<span class="fc" id="L232">      Thread.sleep(5000);</span>
+<span class="fc" id="L233">      System.out.println(&quot;Clicking on add patient button&quot;);</span>
+<span class="fc" id="L234">      WebElement nElement=driver.findElement(By.xpath(&quot;//*[@class='reusableBtnActive  reusableBtn']&quot;));</span>
+<span class="fc" id="L235">      nElement.click();</span>
+<span class="fc" id="L236">    driver.get(&quot;https://preweb.joinelevatenow.co.in/patient/new&quot;);</span>
+<span class="fc" id="L237">    System.out.println(&quot;Adding new  patient entry&quot;);</span>
 
-<span class="fc" id="L217">    WebElement fullname=driver.findElement(By.xpath(&quot;//*[@placeholder='Full Name']&quot;));</span>
-<span class="fc" id="L218">    fullname.sendKeys(randomUsername);</span>
-<span class="fc" id="L219">    test.log(LogStatus.INFO, &quot;Entered Full Name: &quot; + randomUsername);</span>
-<span class="fc" id="L220">    WebElement MobileNo=driver.findElement(By.xpath(&quot;//*[@placeholder='10 Digit Mobile Number']&quot;));</span>
-<span class="fc" id="L221">    MobileNo.sendKeys(randomMobileNumber);</span>
-<span class="fc" id="L222">    test.log(LogStatus.INFO, &quot;Entered Mobile Number: &quot; + randomMobileNumber);</span>
-<span class="fc" id="L223">    WebElement Email=driver.findElement(By.xpath(&quot;//*[@placeholder='Email Address']&quot;));</span>
-<span class="fc" id="L224">    Email.sendKeys(randomEmail);</span>
-<span class="fc" id="L225">    test.log(LogStatus.INFO, &quot;Entered Email Address: &quot; + randomEmail);</span>
-<span class="fc" id="L226">    WebElement gender=driver.findElement(By.xpath(&quot;//*[@class='rs-picker-toggle rs-btn rs-btn-default']&quot;));</span>
-<span class="fc" id="L227">    gender.click();</span>
-<span class="fc" id="L228">    Thread.sleep(3000);</span>
+<span class="fc" id="L239">    WebElement fullname=driver.findElement(By.xpath(&quot;//*[@placeholder='Full Name']&quot;));</span>
+<span class="fc" id="L240">    fullname.sendKeys(randomUsername);</span>
+<span class="fc" id="L241">    test.log(LogStatus.INFO, &quot;Entered Full Name: &quot; + randomUsername);</span>
+<span class="fc" id="L242">    WebElement MobileNo=driver.findElement(By.xpath(&quot;//*[@placeholder='10 Digit Mobile Number']&quot;));</span>
+<span class="fc" id="L243">    MobileNo.sendKeys(randomMobileNumber);</span>
+<span class="fc" id="L244">    test.log(LogStatus.INFO, &quot;Entered Mobile Number: &quot; + randomMobileNumber);</span>
+<span class="fc" id="L245">    WebElement Email=driver.findElement(By.xpath(&quot;//*[@placeholder='Email Address']&quot;));</span>
+<span class="fc" id="L246">    Email.sendKeys(randomEmail);</span>
+<span class="fc" id="L247">    test.log(LogStatus.INFO, &quot;Entered Email Address: &quot; + randomEmail);</span>
+    // WebElement gender=driver.findElement(By.xpath(&quot;//*[@class='rs-picker-toggle rs-btn rs-btn-default']&quot;));
+    // gender.click();
+    // Thread.sleep(3000);
    
-<span class="fc" id="L230">    test.log(LogStatus.INFO, &quot;Opened Gender dropdown&quot;);</span>
+    // test.log(LogStatus.INFO, &quot;Opened Gender dropdown&quot;);
 
-<span class="fc" id="L232">    List&lt;WebElement&gt; genders=driver.findElements(By.xpath(&quot;//*[@class='rs-picker-select-menu-item']&quot;));</span>
-<span class="pc bpc" id="L233" title="1 of 2 branches missed.">    for(WebElement elem:genders){</span>
-<span class="pc bpc" id="L234" title="1 of 2 branches missed.">        if(elem.getText().contains(randomgender));</span>
-<span class="fc" id="L235">        elem.click();</span>
-<span class="fc" id="L236">        test.log(LogStatus.INFO, &quot;Selected Male gender&quot;);</span>
-<span class="fc" id="L237">        break;</span>
-    }
-<span class="fc" id="L239">    System.out.println(&quot;male selected&quot;);</span>
-<span class="fc" id="L240">    WebElement SaveDetails=driver.findElement(By.xpath(&quot;//*[@class='form-control  coreBtn text-white undefined']&quot;));</span>
-<span class="fc" id="L241">    SaveDetails.submit();</span>
-<span class="fc" id="L242">    test.log(LogStatus.INFO, &quot;Clicked Save Details button&quot;);</span>
-<span class="fc" id="L243">    Thread.sleep(5000);</span>
-<span class="fc" id="L244">    }</span>
+    // List&lt;WebElement&gt; genders=driver.findElements(By.xpath(&quot;//*[@class='rs-picker-select-menu-item']&quot;));
+    // for(WebElement elem:genders){
+    //     if(elem.getText().contains(randomgender));
+    //     elem.click();
+    //     test.log(LogStatus.INFO, &quot;Selected Male gender&quot;);
+    //     break;
+    // }
+    // System.out.println(&quot;male selected&quot;);
+<span class="fc" id="L262">    WebElement SaveDetails=driver.findElement(By.xpath(&quot;//*[@class='form-control  coreBtn text-white undefined']&quot;));</span>
+<span class="fc" id="L263">    SaveDetails.submit();</span>
+<span class="fc" id="L264">    test.log(LogStatus.INFO, &quot;Clicked Save Details button&quot;);</span>
+<span class="fc" id="L265">    Thread.sleep(5000);</span>
+<span class="fc" id="L266">    }</span>
      public void UserDetails() throws InterruptedException{
-<span class="fc" id="L246">        String patientAge=generateRandomAge();</span>
-<span class="fc" id="L247">        String patientheight=generateRandomHeight();</span>
-<span class="fc" id="L248">        String patientWeight=generateRandomWeight();</span>
+<span class="fc" id="L268">        String patientAge=generateRandomAge();</span>
+<span class="fc" id="L269">        String patientheight=generateRandomHeight();</span>
+<span class="fc" id="L270">        String patientWeight=generateRandomWeight();</span>
 
-<span class="fc" id="L250">        System.out.println(&quot;Verifying the details of new added patient&quot;);</span>
-<span class="fc" id="L251">        String patientListUrl = &quot;https://staging.joinelevatenow.co.in/patient&quot;;</span>
+<span class="fc" id="L272">        System.out.println(&quot;Verifying the details of new added patient&quot;);</span>
+<span class="fc" id="L273">        String patientListUrl = &quot;https://preweb.joinelevatenow.co.in/patient&quot;;</span>
 
-<span class="fc" id="L253">        test.log(LogStatus.INFO, &quot;Navigating to Patients page: &quot; + patientListUrl);</span>
-<span class="fc" id="L254">        driver.get(patientListUrl);</span>
+<span class="fc" id="L275">        test.log(LogStatus.INFO, &quot;Navigating to Patients page: &quot; + patientListUrl);</span>
+<span class="fc" id="L276">        driver.get(patientListUrl);</span>
        
-<span class="fc" id="L256">    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));</span>
-<span class="fc" id="L257">    wait.until(ExpectedConditions.urlToBe(patientListUrl));</span>
-<span class="fc" id="L258">    test = report.startTest(&quot;verify newly added patient&quot;); // Start the test</span>
-<span class="fc" id="L259">    test.log(LogStatus.PASS, &quot;Reached Patients page successfully&quot;);</span>
-<span class="fc" id="L260">     Thread.sleep(3000);</span>
+<span class="fc" id="L278">    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));</span>
+<span class="fc" id="L279">    wait.until(ExpectedConditions.urlToBe(patientListUrl));</span>
+<span class="fc" id="L280">    test = report.startTest(&quot;verify newly added patient&quot;); // Start the test</span>
+<span class="fc" id="L281">    test.log(LogStatus.PASS, &quot;Reached Patients page successfully&quot;);</span>
+<span class="fc" id="L282">     Thread.sleep(3000);</span>
     // Extract patient count from UI (replace XPath if needed)
-<span class="fc" id="L262">    WebElement patientCountElement = driver.findElement(By.xpath(&quot;//div[contains(text(),'all patients (')]&quot;));</span>
-<span class="fc" id="L263">    String patientCountText = patientCountElement.getText();</span>
-<span class="fc" id="L264">    String extractedPatientID = patientCountText.replaceAll(&quot;\\D+&quot;, &quot;&quot;); // Extracts the number only</span>
+<span class="fc" id="L284">    WebElement patientCountElement = driver.findElement(By.xpath(&quot;//div[contains(text(),'all patients (')]&quot;));</span>
+<span class="fc" id="L285">    String patientCountText = patientCountElement.getText();</span>
+<span class="fc" id="L286">    String extractedPatientID = patientCountText.replaceAll(&quot;\\D+&quot;, &quot;&quot;); // Extracts the number only</span>
     try {
-<span class="fc" id="L266">        int patientIDInt = Integer.parseInt(extractedPatientID);</span>
-<span class="fc" id="L267">        adjustedPatientID = String.valueOf(patientIDInt + 5); // Adjust logic as needed</span>
-<span class="fc" id="L268">        test.log(LogStatus.INFO, &quot;Extracted patient ID: &quot; + extractedPatientID);</span>
-<span class="fc" id="L269">        test.log(LogStatus.INFO, &quot;Calculated adjusted patient ID: &quot; + adjustedPatientID);</span>
-<span class="nc" id="L270">    } catch (NumberFormatException e) {</span>
-<span class="nc" id="L271">        test.log(LogStatus.ERROR, &quot;Failed to extract patient ID from UI: &quot; + e.getMessage());</span>
-<span class="fc" id="L272">    }</span>
-<span class="fc" id="L273">    List&lt;WebElement&gt; patients = driver.findElements(By.xpath(&quot;//a[@class='userName']&quot;));</span>
-<span class="pc bpc" id="L274" title="2 of 4 branches missed.">    if (patients != null &amp;&amp; !patients.isEmpty()) {</span>
-<span class="fc" id="L275">        test.log(LogStatus.INFO, &quot;Number of patients found: &quot; + patients.size());</span>
-<span class="pc bpc" id="L276" title="1 of 2 branches missed.">        for (WebElement patient : patients) {</span>
-<span class="fc" id="L277">            String patientText = patient.getText();</span>
+<span class="fc" id="L288">        int patientIDInt = Integer.parseInt(extractedPatientID);</span>
+<span class="fc" id="L289">        adjustedPatientID = String.valueOf(patientIDInt+1953); // Adjust logic as needed</span>
+<span class="fc" id="L290">        test.log(LogStatus.INFO, &quot;Extracted patient ID: &quot; + extractedPatientID);</span>
+<span class="fc" id="L291">        test.log(LogStatus.INFO, &quot;Calculated adjusted patient ID: &quot; + adjustedPatientID);</span>
+<span class="nc" id="L292">    } catch (NumberFormatException e) {</span>
+<span class="nc" id="L293">        test.log(LogStatus.ERROR, &quot;Failed to extract patient ID from UI: &quot; + e.getMessage());</span>
+<span class="fc" id="L294">    }</span>
+<span class="fc" id="L295">    List&lt;WebElement&gt; patients = driver.findElements(By.xpath(&quot;//a[@class='userName']&quot;));</span>
+<span class="pc bpc" id="L296" title="2 of 4 branches missed.">    if (patients != null &amp;&amp; !patients.isEmpty()) {</span>
+<span class="fc" id="L297">        test.log(LogStatus.INFO, &quot;Number of patients found: &quot; + patients.size());</span>
+<span class="pc bpc" id="L298" title="1 of 2 branches missed.">        for (WebElement patient : patients) {</span>
+<span class="fc" id="L299">            String patientText = patient.getText();</span>
             
-<span class="pc bpc" id="L279" title="3 of 6 branches missed.">            if (randomUsername != null &amp;&amp; patientText != null &amp;&amp; patientText.contains(randomUsername)) {</span>
-<span class="fc" id="L280">                test.log(LogStatus.INFO, &quot;Random Username: &quot; + randomUsername);</span>
-<span class="fc" id="L281">                wait.until(ExpectedConditions.elementToBeClickable(patient)).click();</span>
-<span class="fc" id="L282">                test.log(LogStatus.INFO, &quot;Clicked on patient: &quot; + randomUsername);</span>
-<span class="fc" id="L283">                break;</span>
+<span class="pc bpc" id="L301" title="3 of 6 branches missed.">            if (randomUsername != null &amp;&amp; patientText != null &amp;&amp; patientText.contains(randomUsername)) {</span>
+<span class="fc" id="L302">                test.log(LogStatus.INFO, &quot;Random Username: &quot; + randomUsername);</span>
+<span class="fc" id="L303">                wait.until(ExpectedConditions.elementToBeClickable(patient)).click();</span>
+<span class="fc" id="L304">                test.log(LogStatus.INFO, &quot;Clicked on patient: &quot; + randomUsername);</span>
+<span class="fc" id="L305">                break;</span>
             } else {
-<span class="nc bnc" id="L285" title="All 2 branches missed.">                if (patientText == null) {</span>
-<span class="nc" id="L286">                    test.log(LogStatus.ERROR, &quot;Patient text is null.&quot;);</span>
+<span class="nc bnc" id="L307" title="All 2 branches missed.">                if (patientText == null) {</span>
+<span class="nc" id="L308">                    test.log(LogStatus.ERROR, &quot;Patient text is null.&quot;);</span>
                 }
-<span class="nc bnc" id="L288" title="All 2 branches missed.">                if (randomUsername == null) {</span>
-<span class="nc" id="L289">                    test.log(LogStatus.ERROR, &quot;Random username is null.&quot;);</span>
+<span class="nc bnc" id="L310" title="All 2 branches missed.">                if (randomUsername == null) {</span>
+<span class="nc" id="L311">                    test.log(LogStatus.ERROR, &quot;Random username is null.&quot;);</span>
                 }
             }
-<span class="pc" id="L292">        }</span>
+<span class="pc" id="L314">        }</span>
     } else {
-<span class="nc" id="L294">        test.log(LogStatus.ERROR, &quot;No patients found or WebElement list is null.&quot;);</span>
+<span class="nc" id="L316">        test.log(LogStatus.ERROR, &quot;No patients found or WebElement list is null.&quot;);</span>
     }
         
-<span class="fc" id="L297">    String patientDashboardUrl = &quot;https://staging.joinelevatenow.co.in/patient/&quot; + adjustedPatientID + &quot;/dashboard&quot;;</span>
-<span class="fc" id="L298">    test.log(LogStatus.INFO, &quot;Verifying navigation to patient dashboard: &quot; + patientDashboardUrl);</span>
-<span class="fc" id="L299">    driver.get(patientDashboardUrl);</span>
-<span class="fc" id="L300">    wait.until(ExpectedConditions.urlToBe(patientDashboardUrl));</span>
-<span class="fc" id="L301">    test.log(LogStatus.PASS, &quot;Reached patient dashboard successfully&quot;);</span>
+<span class="fc" id="L319">    String patientDashboardUrl = &quot;https://preweb.joinelevatenow.co.in/patient/&quot; + adjustedPatientID + &quot;/dashboard&quot;;</span>
+<span class="fc" id="L320">    test.log(LogStatus.INFO, &quot;Verifying navigation to patient dashboard: &quot; + patientDashboardUrl);</span>
+<span class="fc" id="L321">    driver.get(patientDashboardUrl);</span>
+<span class="fc" id="L322">    wait.until(ExpectedConditions.urlToBe(patientDashboardUrl));</span>
+<span class="fc" id="L323">    test.log(LogStatus.PASS, &quot;Reached patient dashboard successfully&quot;);</span>
 
-<span class="fc" id="L303">String doctorname=generateandomDoctor();</span>
-<span class="fc" id="L304">  WebElement assignDoctor=driver.findElement(By.xpath(&quot;//*[@placeholder='Assign Doctor/Health Coach']&quot;));</span>
-<span class="fc" id="L305">  assignDoctor.sendKeys(doctorname);</span>
-<span class="fc" id="L306">  Thread.sleep(2000);</span>
-<span class="fc" id="L307">  WebElement doctor= driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[2]/div[1]/div[1]&quot;));</span>
-<span class="fc" id="L308">  doctor.click();</span>
+<span class="fc" id="L325">String doctorname=generateandomDoctor();</span>
+<span class="fc" id="L326">  WebElement assignDoctor=driver.findElement(By.xpath(&quot;//*[@placeholder='Assign Doctor/Health Coach']&quot;));</span>
+<span class="fc" id="L327">  assignDoctor.sendKeys(doctorname);</span>
+<span class="fc" id="L328">  Thread.sleep(2000);</span>
+<span class="fc" id="L329">  WebElement doctor= driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[2]/div[1]/div[1]&quot;));</span>
+<span class="fc" id="L330">  doctor.click();</span>
 
-<span class="fc" id="L310">Thread.sleep(3000);</span>
+<span class="fc" id="L332">Thread.sleep(3000);</span>
 
   
-<span class="fc" id="L313">    WebElement edit= driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div&quot;));</span>
-<span class="fc" id="L314">    edit.click();</span>
+<span class="fc" id="L335">    WebElement edit= driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div&quot;));</span>
+<span class="fc" id="L336">    edit.click();</span>
 
-<span class="fc" id="L316">driver.get(&quot;https://staging.joinelevatenow.co.in/patient/&quot;+adjustedPatientID+&quot;/baselining&quot;);</span>
-<span class="fc" id="L317">Thread.sleep(5000);</span>
+<span class="fc" id="L338">driver.get(&quot;https://preweb.joinelevatenow.co.in/patient/&quot;+adjustedPatientID+&quot;/baselining&quot;);</span>
+<span class="fc" id="L339">Thread.sleep(5000);</span>
     //Navigation to the patient details
-<span class="fc" id="L319">    WebElement patientdetails=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div/div[1]/div[2]/div[2]/div[2]/div&quot;));</span>
-<span class="fc" id="L320">    patientdetails.click();</span>
+<span class="fc" id="L341">    WebElement patientdetails=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div/div[1]/div[2]/div[2]/div[2]/div&quot;));</span>
+<span class="fc" id="L342">    patientdetails.click();</span>
    
-<span class="fc" id="L322">    WebElement age=driver.findElement(By.xpath(&quot;//*[@placeholder='age']&quot;));</span>
-<span class="fc" id="L323">    age.clear();</span>
-<span class="fc" id="L324">    age.sendKeys(patientAge);</span>
-<span class="fc" id="L325">    age.sendKeys(Keys.ENTER);</span>
-<span class="fc" id="L326">    test.log(LogStatus.INFO, &quot;Age&quot;);</span>
-<span class="fc" id="L327">    WebElement height=driver.findElement(By.xpath(&quot;//*[@placeholder='height']&quot;));</span>
-<span class="fc" id="L328">    height.clear();</span>
-<span class="fc" id="L329">    height.sendKeys(patientheight);</span>
-<span class="fc" id="L330">    age.sendKeys(Keys.ENTER);</span>
-<span class="fc" id="L331">    test.log(LogStatus.INFO, &quot;Height&quot;);</span>
+<span class="fc" id="L344">    WebElement age=driver.findElement(By.xpath(&quot;//*[@placeholder='age']&quot;));</span>
+<span class="fc" id="L345">    age.clear();</span>
+<span class="fc" id="L346">    age.sendKeys(patientAge);</span>
+<span class="fc" id="L347">    age.sendKeys(Keys.ENTER);</span>
+<span class="fc" id="L348">    test.log(LogStatus.INFO, &quot;Age&quot;);</span>
+<span class="fc" id="L349">    WebElement height=driver.findElement(By.xpath(&quot;//*[@placeholder='height']&quot;));</span>
+<span class="fc" id="L350">    height.clear();</span>
+<span class="fc" id="L351">    height.sendKeys(patientheight);</span>
+<span class="fc" id="L352">    age.sendKeys(Keys.ENTER);</span>
+<span class="fc" id="L353">    test.log(LogStatus.INFO, &quot;Height&quot;);</span>
    
-<span class="fc" id="L333">    WebElement targetWeight=driver.findElement(By.xpath(&quot;//*[@placeholder='target weight']&quot;));</span>
-<span class="fc" id="L334">    targetWeight.clear();</span>
-<span class="fc" id="L335">    targetWeight.sendKeys(patientWeight);</span>
-<span class="fc" id="L336">    age.sendKeys(Keys.ENTER);</span>
-<span class="fc" id="L337">    test.log(LogStatus.INFO, &quot;Weight&quot;);</span>
-<span class="fc" id="L338">    WebElement weight=driver.findElement(By.xpath(&quot;//*[@placeholder='start weight']&quot;));</span>
-<span class="fc" id="L339">    weight.clear();</span>
-<span class="fc" id="L340">    weight.sendKeys(generateRandomWeight());</span>
-<span class="fc" id="L341">    test.log(LogStatus.INFO, &quot;Weight&quot;);</span>
+<span class="fc" id="L355">    WebElement targetWeight=driver.findElement(By.xpath(&quot;//*[@placeholder='target weight']&quot;));</span>
+<span class="fc" id="L356">    targetWeight.clear();</span>
+<span class="fc" id="L357">    targetWeight.sendKeys(patientWeight);</span>
+<span class="fc" id="L358">    age.sendKeys(Keys.ENTER);</span>
+<span class="fc" id="L359">    test.log(LogStatus.INFO, &quot;Weight&quot;);</span>
+<span class="fc" id="L360">    WebElement weight=driver.findElement(By.xpath(&quot;//*[@placeholder='start weight']&quot;));</span>
+<span class="fc" id="L361">    weight.clear();</span>
+<span class="fc" id="L362">    weight.sendKeys(generateRandomWeight());</span>
+<span class="fc" id="L363">    test.log(LogStatus.INFO, &quot;Weight&quot;);</span>
   
-<span class="fc" id="L343">    WebElement SaveDetails=driver.findElement(By.xpath(&quot;//*[@class='form-control  coreBtn text-white undefined']&quot;));</span>
-<span class="fc" id="L344">    SaveDetails.submit();</span>
-<span class="fc" id="L345">    test.log(LogStatus.INFO, &quot;Clicked Save Details button&quot;);</span>
-<span class="fc" id="L346">    Thread.sleep(5000);</span>
+<span class="fc" id="L365">    WebElement SaveDetails=driver.findElement(By.xpath(&quot;//*[@class='form-control  coreBtn text-white undefined']&quot;));</span>
+<span class="fc" id="L366">    SaveDetails.submit();</span>
+<span class="fc" id="L367">    test.log(LogStatus.INFO, &quot;Clicked Save Details button&quot;);</span>
+<span class="fc" id="L368">    Thread.sleep(5000);</span>
     
-<span class="fc" id="L348">}</span>
+<span class="fc" id="L370">}</span>
  public void AddPrescription() throws InterruptedException, AWTException{
        // Login URL (assuming successful login from previous tests)
-<span class="fc" id="L351">       String str1=generateRandomText(6);</span>
-<span class="fc" id="L352">       String str2=generateRandomText(10);</span>
-<span class="fc" id="L353">    String patientDashboardUrl = &quot;https://staging.joinelevatenow.co.in/patient/&quot; + adjustedPatientID + &quot;/dashboard&quot;;</span>
-<span class="fc" id="L354">    test = report.startTest(&quot;add prescription&quot;); // Start the test</span>
-
-<span class="fc" id="L356">    test.log(LogStatus.INFO, &quot;Verifying navigation to patient dashboard: &quot; + patientDashboardUrl);</span>
-<span class="fc" id="L357">    driver.get(patientDashboardUrl);</span>
-
+<span class="fc" id="L373">       String str1=generateRandomText(6);</span>
+<span class="fc" id="L374">  String str2=generateRandomText(10);</span>
+<span class="fc" id="L375">       Thread.sleep(3000);</span>
+<span class="fc" id="L376">       driver.get(&quot;https://preweb.joinelevatenow.co.in/patient&quot;);</span>
+<span class="fc" id="L377">       test.log(LogStatus.INFO, &quot;Navigated to the Patient page&quot;);</span>
+<span class="fc" id="L378">       Thread.sleep(3000);</span>
+   
+       // Extract patient count from UI
+<span class="fc" id="L381">       WebElement patientCountElement = driver.findElement(By.xpath(&quot;//div[contains(text(),'all patients (')]&quot;));</span>
+<span class="fc" id="L382">       String patientCountText = patientCountElement.getText();</span>
+<span class="fc" id="L383">       test.log(LogStatus.INFO, &quot;Extracted patient count text: &quot; + patientCountText);</span>
+   
+<span class="fc" id="L385">       String extractedPatientID = patientCountText.replaceAll(&quot;\\D+&quot;, &quot;&quot;); // Extracts the number only</span>
+<span class="fc" id="L386">       int patientIDInt = Integer.parseInt(extractedPatientID);</span>
+<span class="fc" id="L387">       String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed</span>
+   
+<span class="fc" id="L389">       String patientDashboardUrl = &quot;https://preweb.joinelevatenow.co.in/patient/&quot; + adjustedPatientID + &quot;/dashboard&quot;;</span>
+<span class="fc" id="L390">       test.log(LogStatus.INFO, &quot;Navigating to patient dashboard: &quot; + patientDashboardUrl);</span>
+<span class="fc" id="L391">       driver.get(patientDashboardUrl);</span>
+<span class="fc" id="L392">       Thread.sleep(4000);</span>
 
     //verify patient details
-<span class="fc" id="L361">    WebElement patientName=driver.findElement(By.xpath(&quot;//*[@class='card-title capitalize']&quot;));</span>
-<span class="fc" id="L362">    String patientNameText=patientName.getText();</span>
-<span class="fc" id="L363">    test.log(LogStatus.INFO, &quot;Patient Name: &quot; + patientNameText);</span>
-<span class="fc" id="L364">    System.out.println(patientNameText);</span>
-<span class="fc" id="L365">    Thread.sleep(2000);</span>
-<span class="fc" id="L366">    WebElement patientAge=driver.findElement(By.xpath(&quot;//*[@class='card-text capitalize']&quot;));</span>
-<span class="fc" id="L367">    String patientAgeText=patientAge.getText();</span>
-<span class="fc" id="L368">    System.out.println(patientAgeText);</span>
-<span class="fc" id="L369">    Thread.sleep(2000);</span>
-<span class="fc" id="L370">    WebElement mobiledetails=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[2]/div[3]&quot;));</span>
-<span class="fc" id="L371">    String mobileNumber= mobiledetails.getText();</span>
-<span class="fc" id="L372">    System.out.println(mobileNumber);</span>
-<span class="fc" id="L373">    Thread.sleep(2000);</span>
-<span class="fc" id="L374">    WebElement email=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[2]/div[4]&quot;));</span>
-<span class="fc" id="L375">    String emailId=email.getText();</span>
-<span class="fc" id="L376">    System.out.println(emailId);</span>
-<span class="fc" id="L377">    Thread.sleep(2000);</span>
+<span class="fc" id="L395">    WebElement patientName=driver.findElement(By.xpath(&quot;//*[@class='card-title capitalize']&quot;));</span>
+<span class="fc" id="L396">    String patientNameText=patientName.getText();</span>
+<span class="fc" id="L397">    test.log(LogStatus.INFO, &quot;Patient Name: &quot; + patientNameText);</span>
+<span class="fc" id="L398">    System.out.println(patientNameText);</span>
+<span class="fc" id="L399">    Thread.sleep(2000);</span>
+<span class="fc" id="L400">    WebElement patientAge=driver.findElement(By.xpath(&quot;//*[@class='card-text capitalize']&quot;));</span>
+<span class="fc" id="L401">    String patientAgeText=patientAge.getText();</span>
+<span class="fc" id="L402">    System.out.println(patientAgeText);</span>
+<span class="fc" id="L403">    Thread.sleep(2000);</span>
+<span class="fc" id="L404">    WebElement mobiledetails=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[2]/div[3]&quot;));</span>
+<span class="fc" id="L405">    String mobileNumber= mobiledetails.getText();</span>
+<span class="fc" id="L406">    System.out.println(mobileNumber);</span>
+<span class="fc" id="L407">    Thread.sleep(2000);</span>
+<span class="fc" id="L408">    WebElement email=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[2]/div[4]&quot;));</span>
+<span class="fc" id="L409">    String emailId=email.getText();</span>
+<span class="fc" id="L410">    System.out.println(emailId);</span>
+<span class="fc" id="L411">    Thread.sleep(2000);</span>
 
 
-<span class="fc" id="L380">    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));</span>
-<span class="fc" id="L381">    wait.until(ExpectedConditions.urlToBe(patientDashboardUrl));</span>
-<span class="fc" id="L382">    test.log(LogStatus.PASS, &quot;Reached patient dashboard successfully&quot;);</span>
-<span class="fc" id="L383">        WebElement prescription=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[1]/div[3]/div&quot;));</span>
+<span class="fc" id="L414">    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));</span>
+<span class="fc" id="L415">    wait.until(ExpectedConditions.urlToBe(patientDashboardUrl));</span>
+<span class="fc" id="L416">    test.log(LogStatus.PASS, &quot;Reached patient dashboard successfully&quot;);</span>
+<span class="fc" id="L417">        WebElement prescription=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[1]/div[3]/div&quot;));</span>
                     // Create instance of Javascript executor
             // JavascriptExecutor js = (JavascriptExecutor) driver;
             // js.executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, prescription);
-<span class="fc" id="L387">        Thread.sleep(2000);</span>
-<span class="fc" id="L388">        prescription.click();</span>
-<span class="fc" id="L389">        test.log(LogStatus.INFO, &quot;Clicked on Prescriptions tab&quot;);</span>
-<span class="fc" id="L390">        WebElement newPresElement=driver.findElement(By.xpath(&quot;//*[@class='btn mt-3 btn-outline-primary']&quot;));</span>
-<span class="fc" id="L391">        Thread.sleep(2000);</span>
+<span class="fc" id="L421">        Thread.sleep(2000);</span>
+<span class="fc" id="L422">        prescription.click();</span>
+<span class="fc" id="L423">        test.log(LogStatus.INFO, &quot;Clicked on Prescriptions tab&quot;);</span>
+<span class="fc" id="L424">        WebElement newPresElement=driver.findElement(By.xpath(&quot;//*[@class='btn mt-3 btn-outline-primary']&quot;));</span>
+<span class="fc" id="L425">        Thread.sleep(2000);</span>
         // js.executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, newPresElement);
-<span class="fc" id="L393">        newPresElement.click();</span>
-<span class="fc" id="L394">        test.log(LogStatus.INFO, &quot;Clicked on New Prescriptions tab&quot;);</span>
-<span class="fc" id="L395">        Thread.sleep(5000);</span>
+<span class="fc" id="L427">        newPresElement.click();</span>
+<span class="fc" id="L428">        test.log(LogStatus.INFO, &quot;Clicked on New Prescriptions tab&quot;);</span>
+<span class="fc" id="L429">        Thread.sleep(5000);</span>
 
      // Select Doctor
-<span class="fc" id="L398">    WebElement selectDoctorElement = driver.findElement(By.xpath(&quot;//span[text()='Select Doctor']&quot;));</span>
-<span class="fc" id="L399">    Thread.sleep(2000);</span>
-<span class="fc" id="L400">    selectDoctorElement.click();</span>
-<span class="fc" id="L401">    test.log(LogStatus.INFO, &quot;Clicked on Select Doctor dropdown&quot;);</span>
+<span class="fc" id="L432">    WebElement selectDoctorElement = driver.findElement(By.xpath(&quot;//span[text()='Select Doctor']&quot;));</span>
+<span class="fc" id="L433">    Thread.sleep(2000);</span>
+<span class="fc" id="L434">    selectDoctorElement.click();</span>
+<span class="fc" id="L435">    test.log(LogStatus.INFO, &quot;Clicked on Select Doctor dropdown&quot;);</span>
 
-<span class="fc" id="L403">    WebElement selectDoctor = driver.findElement(By.xpath(&quot;/html/body/div[2]/div[2]/div/span&quot;));</span>
-<span class="fc" id="L404">    Thread.sleep(2000);</span>
-<span class="fc" id="L405">    selectDoctor.click();</span>
-<span class="fc" id="L406">    test.log(LogStatus.INFO, &quot;Selected doctor:&quot;);</span>
+<span class="fc" id="L437">    WebElement selectDoctor = driver.findElement(By.xpath(&quot;/html/body/div[2]/div[2]/div/span&quot;));</span>
+<span class="fc" id="L438">    Thread.sleep(2000);</span>
+<span class="fc" id="L439">    selectDoctor.click();</span>
+<span class="fc" id="L440">    test.log(LogStatus.INFO, &quot;Selected doctor:&quot;);</span>
      
       // Enter Diagnosis
-<span class="fc" id="L409">    WebElement diagnosisField = driver.findElement(By.xpath(&quot;//*[@placeholder='Diagnosis']&quot;));</span>
-<span class="fc" id="L410">    Thread.sleep(2000);</span>
-<span class="fc" id="L411">    diagnosisField.sendKeys(str1);</span>
-<span class="fc" id="L412">    test.log(LogStatus.INFO, &quot;Entered Diagnosis: &quot; +str1);</span>
+<span class="fc" id="L443">    WebElement diagnosisField = driver.findElement(By.xpath(&quot;//*[@placeholder='Diagnosis']&quot;));</span>
+<span class="fc" id="L444">    Thread.sleep(2000);</span>
+<span class="fc" id="L445">    diagnosisField.sendKeys(str1);</span>
+<span class="fc" id="L446">    test.log(LogStatus.INFO, &quot;Entered Diagnosis: &quot; +str1);</span>
 
     // Select Medicine (consider using provided methods for selecting medicine)
-<span class="fc" id="L415">    WebElement selectMedicineElement = driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div[1]/div/div/div&quot;));</span>
-<span class="fc" id="L416">selectMedicineElement.click();</span>
+<span class="fc" id="L449">    WebElement selectMedicineElement = driver.findElement(By.xpath(&quot;//span[text()='Search Medicine Name']&quot;));</span>
+<span class="fc" id="L450">selectMedicineElement.click();</span>
+<span class="fc" id="L451">Thread.sleep(2000);</span>
 
-<span class="fc" id="L418">    WebElement searchMedicineField = driver.findElement(By.xpath(&quot;//*[@placeholder='Search']&quot;));</span>
-<span class="fc" id="L419">    String medicineName = &quot;Tablet Nida New Test&quot;;</span>
-<span class="fc" id="L420">    searchMedicineField.sendKeys(medicineName);</span>
-<span class="fc" id="L421">    searchMedicineField.sendKeys(Keys.ENTER);</span>
-<span class="fc" id="L422">    test.log(LogStatus.INFO, &quot;Entered medicine name: &quot; + medicineName);</span>
+<span class="fc" id="L453">    WebElement searchMedicineField = driver.findElement(By.xpath(&quot;//*[@placeholder='Search']&quot;));</span>
+<span class="fc" id="L454">    String medicineName = getRandomMedicine();</span>
+<span class="fc" id="L455">    searchMedicineField.sendKeys(medicineName);</span>
+<span class="fc" id="L456">    searchMedicineField.sendKeys(Keys.ENTER);</span>
+<span class="fc" id="L457">    test.log(LogStatus.INFO, &quot;Entered medicine name: &quot; + medicineName);</span>
     // **Select medicine from search results (modify logic as needed)**
-<span class="fc" id="L424">    Thread.sleep(2000);</span>
+<span class="fc" id="L459">    Thread.sleep(2000);</span>
     // Select Frequency (consider using provided methods for selecting frequency)
-<span class="fc" id="L426">    WebElement frequencyElement = driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div/div[2]/div/div[2]/div[3]/div/select&quot;));</span>
-<span class="fc" id="L427">    Select frequencySelect = new Select(frequencyElement);</span>
-<span class="fc" id="L428">    frequencySelect.selectByVisibleText(&quot;Daily&quot;);</span>
-<span class="fc" id="L429">    test.log(LogStatus.INFO, &quot;Selected Frequency: Daily&quot;);</span>
-
+<span class="fc" id="L461">    driver.findElement(By.xpath(&quot;//*[@placeholder='Course Duration ']&quot;)).sendKeys(&quot;30&quot;);</span>
+<span class="fc" id="L462">    Thread.sleep(2000);</span>
+<span class="fc" id="L463">    WebElement frequencyElement = driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div/div[2]/div/div[2]/div[3]/div/select&quot;));</span>
+<span class="fc" id="L464">    Select frequencySelect = new Select(frequencyElement);</span>
+<span class="fc" id="L465">    frequencySelect.selectByVisibleText(&quot;Daily&quot;);</span>
+<span class="fc" id="L466">    test.log(LogStatus.INFO, &quot;Selected Frequency: Daily&quot;);</span>
+<span class="fc" id="L467">driver.findElement((By.xpath(&quot;//label[text()='Morning']&quot;))).click();</span>
+<span class="fc" id="L468">test.log(LogStatus.INFO, &quot;Selected Morning&quot;);</span>
+<span class="fc" id="L469">Thread.sleep(2000);</span>
     // Select Dosage (consider using provided methods for selecting dosage)
-<span class="fc" id="L432">    WebElement dosageElement = driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div/div[2]/div/div[2]/div[4]/div/select&quot;));</span>
-<span class="fc" id="L433">    Select dosageSelect = new Select(dosageElement);</span>
-<span class="fc" id="L434">    dosageSelect.selectByVisibleText(&quot;1&quot;);</span>
-<span class="fc" id="L435">    test.log(LogStatus.INFO, &quot;Selected Dosage: 1&quot;);</span>
+<span class="fc" id="L471">    WebElement dosageElement = driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div/div[2]/div/div[2]/div[4]/div/select&quot;));</span>
+<span class="fc" id="L472">    Select dosageSelect = new Select(dosageElement);</span>
+<span class="fc" id="L473">    dosageSelect.selectByVisibleText(&quot;1&quot;);</span>
+<span class="fc" id="L474">    test.log(LogStatus.INFO, &quot;Selected Dosage: 1&quot;);</span>
 
 
 
-<span class="fc" id="L439">    WebElement moreDetails= driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[4]/div/div/textarea&quot;));</span>
-<span class="fc" id="L440">    moreDetails.sendKeys(str2);</span>
-<span class="fc" id="L441">    test.log(LogStatus.INFO, &quot;moredetails: &quot;+ str2);</span>
-<span class="fc" id="L442">Thread.sleep(2000);</span>
-<span class="fc" id="L443">    WebElement SaveDetails = driver.findElement(By.xpath(&quot;//div[text()='Save Details']&quot;));</span>
-<span class="fc" id="L444">    Thread.sleep(2000);</span>
-<span class="fc" id="L445">    SaveDetails.click();</span>
-<span class="fc" id="L446">    test.log(LogStatus.INFO, &quot;click on the save button&quot;);</span>
-<span class="fc" id="L447">    Thread.sleep(5000);</span>
+<span class="fc" id="L478">    WebElement moreDetails= driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[4]/div/div/textarea&quot;));</span>
+<span class="fc" id="L479">    moreDetails.sendKeys(str2);</span>
+<span class="fc" id="L480">    moreDetails.sendKeys(Keys.ENTER);</span>
+<span class="fc" id="L481">    test.log(LogStatus.INFO, &quot;moredetails: &quot;+ str2);</span>
+<span class="fc" id="L482">Thread.sleep(2000);</span>
+<span class="fc" id="L483">    WebElement SaveDetails = driver.findElement(By.xpath(&quot;//div[text()='Save Details']&quot;));</span>
+<span class="fc" id="L484">    Thread.sleep(2000);</span>
+<span class="fc" id="L485">    SaveDetails.click();</span>
+<span class="fc" id="L486">    test.log(LogStatus.INFO, &quot;click on the save button&quot;);</span>
+<span class="fc" id="L487">    Thread.sleep(5000);</span>
    
-<span class="fc" id="L449">   WebElement publiElement= driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[3]/div[1]/div/div/div[1]/div[2]/div[5]/div/span&quot;));</span>
-<span class="fc" id="L450">   Thread.sleep(2000);</span>
-<span class="fc" id="L451">   publiElement.click();</span>
+<span class="fc" id="L489">   WebElement publiElement= driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[3]/div[1]/div/div/div[1]/div[2]/div[5]/div/span&quot;));</span>
+<span class="fc" id="L490">   Thread.sleep(2000);</span>
+<span class="fc" id="L491">   publiElement.click();</span>
     //publish the report 
-<span class="fc" id="L453">Thread.sleep(3000);</span>
-<span class="fc" id="L454">test.log(LogStatus.INFO, &quot;click on publish element&quot;);</span>
-<span class="fc" id="L455">    WebElement publish =driver.findElement(By.xpath(&quot;//*[@class='rs-btn rs-btn-primary']&quot;));</span>
-<span class="fc" id="L456">    publish.click();</span>
-<span class="fc" id="L457">    test.log(LogStatus.INFO, &quot;click on publish button&quot;);</span>
+<span class="fc" id="L493">Thread.sleep(3000);</span>
+<span class="fc" id="L494">test.log(LogStatus.INFO, &quot;click on publish element&quot;);</span>
+<span class="fc" id="L495">    WebElement publish =driver.findElement(By.xpath(&quot;//*[@class='rs-btn rs-btn-primary']&quot;));</span>
+<span class="fc" id="L496">    publish.click();</span>
+<span class="fc" id="L497">    test.log(LogStatus.INFO, &quot;click on publish button&quot;);</span>
     //Alert handling
      // Switch the focus to the alert
-<span class="fc" id="L460">        Alert alert = driver.switchTo().alert();</span>
+<span class="fc" id="L500">        Alert alert = driver.switchTo().alert();</span>
 
         // Get the text of the alert (optional)
-<span class="fc" id="L463">        String alertText = alert.getText();</span>
-<span class="fc" id="L464">        System.out.println(&quot;Alert Text: &quot; + alertText);</span>
+<span class="fc" id="L503">        String alertText = alert.getText();</span>
+<span class="fc" id="L504">        System.out.println(&quot;Alert Text: &quot; + alertText);</span>
 
         // Accept the alert (click OK)
-<span class="fc" id="L467">        alert.accept();</span>
-<span class="fc" id="L468">        Thread.sleep(10000);</span>
+<span class="fc" id="L507">        alert.accept();</span>
+<span class="fc" id="L508">        Thread.sleep(10000);</span>
     
-<span class="fc" id="L470"> driver.get(&quot;https://staging.joinelevatenow.co.in/patient/&quot;+adjustedPatientID+&quot;/dashboard&quot;);</span>
+<span class="fc" id="L510"> driver.get(&quot;https://preweb.joinelevatenow.co.in/patient/&quot;+adjustedPatientID+&quot;/dashboard&quot;);</span>
 
-<span class="fc" id="L472">    Thread.sleep(3000);</span>
-<span class="fc" id="L473">    }</span>
+<span class="fc" id="L512">    Thread.sleep(3000);</span>
+<span class="fc" id="L513">    }</span>
     public void onboardingDate() throws Exception {
-<span class="fc" id="L475">        test = report.startTest(&quot;onboardingDate&quot;); // Start the test</span>
-<span class="fc" id="L476">        test.log(LogStatus.INFO, &quot;Starting the onboardingDate test&quot;);</span>
+<span class="fc" id="L515">        test = report.startTest(&quot;onboardingDate&quot;); // Start the test</span>
+<span class="fc" id="L516">        test.log(LogStatus.INFO, &quot;Starting the onboardingDate test&quot;);</span>
     
-<span class="fc" id="L478">        Thread.sleep(3000);</span>
-<span class="fc" id="L479">        driver.get(&quot;https://staging.joinelevatenow.co.in/patient&quot;);</span>
-<span class="fc" id="L480">        test.log(LogStatus.INFO, &quot;Navigated to the Patient page&quot;);</span>
-<span class="fc" id="L481">        Thread.sleep(3000);</span>
+<span class="fc" id="L518">        Thread.sleep(3000);</span>
+<span class="fc" id="L519">        driver.get(&quot;https://preweb.joinelevatenow.co.in/patient&quot;);</span>
+<span class="fc" id="L520">        test.log(LogStatus.INFO, &quot;Navigated to the Patient page&quot;);</span>
+<span class="fc" id="L521">        Thread.sleep(3000);</span>
     
         // Extract patient count from UI
-<span class="fc" id="L484">        WebElement patientCountElement = driver.findElement(By.xpath(&quot;//div[contains(text(),'all patients (')]&quot;));</span>
-<span class="fc" id="L485">        String patientCountText = patientCountElement.getText();</span>
-<span class="fc" id="L486">        test.log(LogStatus.INFO, &quot;Extracted patient count text: &quot; + patientCountText);</span>
+<span class="fc" id="L524">        WebElement patientCountElement = driver.findElement(By.xpath(&quot;//div[contains(text(),'all patients (')]&quot;));</span>
+<span class="fc" id="L525">        String patientCountText = patientCountElement.getText();</span>
+<span class="fc" id="L526">        test.log(LogStatus.INFO, &quot;Extracted patient count text: &quot; + patientCountText);</span>
     
-<span class="fc" id="L488">        String extractedPatientID = patientCountText.replaceAll(&quot;\\D+&quot;, &quot;&quot;); // Extracts the number only</span>
-<span class="fc" id="L489">        int patientIDInt = Integer.parseInt(extractedPatientID);</span>
-<span class="fc" id="L490">        String adjustedPatientID = String.valueOf(patientIDInt + 5); // Adjust logic as needed</span>
+<span class="fc" id="L528">        String extractedPatientID = patientCountText.replaceAll(&quot;\\D+&quot;, &quot;&quot;); // Extracts the number only</span>
+<span class="fc" id="L529">        int patientIDInt = Integer.parseInt(extractedPatientID);</span>
+<span class="fc" id="L530">        String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed</span>
     
-<span class="fc" id="L492">        String patientDashboardUrl = &quot;https://staging.joinelevatenow.co.in/patient/&quot; + adjustedPatientID + &quot;/dashboard&quot;;</span>
-<span class="fc" id="L493">        test.log(LogStatus.INFO, &quot;Navigating to patient dashboard: &quot; + patientDashboardUrl);</span>
-<span class="fc" id="L494">        driver.get(patientDashboardUrl);</span>
-<span class="fc" id="L495">        Thread.sleep(4000);</span>
+<span class="fc" id="L532">        String patientDashboardUrl = &quot;https://preweb.joinelevatenow.co.in/patient/&quot; + adjustedPatientID + &quot;/dashboard&quot;;</span>
+<span class="fc" id="L533">        test.log(LogStatus.INFO, &quot;Navigating to patient dashboard: &quot; + patientDashboardUrl);</span>
+<span class="fc" id="L534">        driver.get(patientDashboardUrl);</span>
+<span class="fc" id="L535">        Thread.sleep(4000);</span>
     
-<span class="fc" id="L497">        driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div/div/span&quot;)).click();</span>
-<span class="fc" id="L498">        test.log(LogStatus.INFO, &quot;Clicked on the calendar icon to select onboarding date&quot;);</span>
-<span class="fc" id="L499">        Thread.sleep(2000);</span>
+<span class="fc" id="L537">        driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/div[2]/div[3]/div/div[2]/div/div/span&quot;)).click();</span>
+<span class="fc" id="L538">        test.log(LogStatus.INFO, &quot;Clicked on the calendar icon to select onboarding date&quot;);</span>
+<span class="fc" id="L539">        Thread.sleep(2000);</span>
     
-<span class="fc" id="L501">        List&lt;WebElement&gt; dates = driver.findElements(By.className(&quot;rs-calendar-table-cell-day&quot;));</span>
-<span class="pc bpc" id="L502" title="1 of 2 branches missed.">        for (WebElement element : dates) {</span>
-<span class="pc bpc" id="L503" title="2 of 4 branches missed.">            if (element.isDisplayed() &amp;&amp; element.isEnabled()) {</span>
-<span class="fc" id="L504">                element.click();</span>
-<span class="fc" id="L505">                test.log(LogStatus.INFO, &quot;Selected onboarding date: &quot; + element.getText());</span>
-<span class="fc" id="L506">                break;</span>
+<span class="fc" id="L541">        List&lt;WebElement&gt; dates = driver.findElements(By.className(&quot;rs-calendar-table-cell-day&quot;));</span>
+<span class="pc bpc" id="L542" title="1 of 2 branches missed.">        for (WebElement element : dates) {</span>
+<span class="pc bpc" id="L543" title="2 of 4 branches missed.">            if (element.isDisplayed() &amp;&amp; element.isEnabled()) {</span>
+<span class="fc" id="L544">                element.click();</span>
+<span class="fc" id="L545">                test.log(LogStatus.INFO, &quot;Selected onboarding date: &quot; + element.getText());</span>
+<span class="fc" id="L546">                break;</span>
             }
-<span class="nc" id="L508">        }</span>
-<span class="fc" id="L509">        Thread.sleep(2000);</span>
+<span class="nc" id="L548">        }</span>
+<span class="fc" id="L549">        Thread.sleep(2000);</span>
     
-<span class="fc" id="L511">        driver.findElement(By.xpath(&quot;//button[text()='OK']&quot;)).click();</span>
-<span class="fc" id="L512">        test.log(LogStatus.INFO, &quot;Clicked 'OK' to confirm the onboarding date&quot;);</span>
+<span class="fc" id="L551">        driver.findElement(By.xpath(&quot;//button[text()='OK']&quot;)).click();</span>
+<span class="fc" id="L552">        test.log(LogStatus.INFO, &quot;Clicked 'OK' to confirm the onboarding date&quot;);</span>
     
-<span class="fc" id="L514">        Alert alert = driver.switchTo().alert();</span>
-<span class="fc" id="L515">        alert.accept();</span>
-<span class="fc" id="L516">        test.log(LogStatus.INFO, &quot;Accepted the alert confirming the onboarding date&quot;);</span>
+<span class="fc" id="L554">        Alert alert = driver.switchTo().alert();</span>
+<span class="fc" id="L555">        alert.accept();</span>
+<span class="fc" id="L556">        test.log(LogStatus.INFO, &quot;Accepted the alert confirming the onboarding date&quot;);</span>
     
-<span class="fc" id="L518">        Thread.sleep(2000);</span>
-<span class="fc" id="L519">        test.log(LogStatus.INFO, &quot;onboardingDate test completed successfully&quot;);</span>
-<span class="fc" id="L520">    }</span>
+<span class="fc" id="L558">        Thread.sleep(2000);</span>
+<span class="fc" id="L559">        test.log(LogStatus.INFO, &quot;onboardingDate test completed successfully&quot;);</span>
+<span class="fc" id="L560">    }</span>
 
     @Test(description = &quot;Testcase for adding prescription&quot;)
     public void testCase1() throws Exception{
     
-<span class="fc" id="L525">Testcase1 test=new Testcase1();</span>
-<span class="fc" id="L526">test.setup();</span>
-<span class="fc" id="L527">test.login();</span>
-<span class="fc" id="L528">test.navigationToDashboard();</span>
-<span class="fc" id="L529">test.AddNewPatient();</span>
-<span class="fc" id="L530">test.UserDetails();</span>
-<span class="fc" id="L531">test.onboardingDate();</span>
-<span class="fc" id="L532">test.AddPrescription();</span>
-<span class="fc" id="L533">test.tearDown();</span>
-<span class="fc" id="L534">    }</span>
+<span class="fc" id="L565">Testcase1 test=new Testcase1();</span>
+<span class="fc" id="L566">test.setup();</span>
+<span class="fc" id="L567">test.login();</span>
+<span class="fc" id="L568">test.navigationToDashboard();</span>
+<span class="fc" id="L569">test.AddNewPatient();</span>
+<span class="fc" id="L570">test.UserDetails();</span>
+<span class="fc" id="L571">test.onboardingDate();</span>
+<span class="fc" id="L572">test.AddPrescription();</span>
+<span class="fc" id="L573">test.tearDown();</span>
+<span class="fc" id="L574">    }</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

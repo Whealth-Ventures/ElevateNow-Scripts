@@ -66,12 +66,34 @@ public class Testcase1 {
     }
 
     private String generateandomDoctor(){
-        String[] name={"Dr.Testdoctor","Dr. test1","Dr. SampleTest","testignDoc","Dr.Testdoctor","Dr. SampleTest","NewDoctor"};
+        String[] name={
+            "Testingn DocSign",
+            "TestNidaDoc",
+            "Program Test Doctor",
+            "Doctor_onlyfortesting"
+        };
 
       
         Random random=new Random();
         String doctorName=name[random.nextInt(name.length)];
         return doctorName;
+    }
+    public static String getRandomMedicine() {
+        String[] medicineNames = {
+            "Syrup Odomos",
+            "Injection Nida New",
+            "Tablet Atorva Asp",
+            "Tablet Gabapin NT",
+            "Cream/Ointment Melalumin Ultra",
+            "Tablet Nurokind Next",
+            "Tablet Concor COR 2.5 Table",
+            "Tablet GLUXIT M 10/500",
+            "Injection APIDRA (GLULISINE)"
+        };
+
+        Random random = new Random();
+        int index = random.nextInt(medicineNames.length);
+        return medicineNames[index];
     }
  private String generateRandomEmail() {
         String characters = "abcdefghijklmnopqrstuvwxyz1234567890";
@@ -133,7 +155,7 @@ private static String generateRandomAge() {
         test = report.startTest("Login"); // Start the test
         System.out.println("Start TestCase");
     test.log(LogStatus.INFO,"Start testcase");
-        String loginUrl = "https://staging.joinelevatenow.co.in/";
+        String loginUrl = "https://preweb.joinelevatenow.co.in/";
     
           // Login phone number (consider using test data management)
        
@@ -146,7 +168,7 @@ private static String generateRandomAge() {
         phoneInput.sendKeys(mobileNumber);
 
         // Wait for 30 seconds to manually enter the OTP
-            
+            Thread.sleep(30000);
             
             WebElement sendOtp=driver.findElement(By.xpath("//*[@class='form-control  coreBtn text-white false']"));
             sendOtp.click();
@@ -175,7 +197,7 @@ Thread.sleep(3000);
 public void navigationToDashboard() throws InterruptedException {
     // Login URL (assuming successful login from previous test)
     test = report.startTest("navigation to patient dashboard"); // Start the test
-    String dashboardUrl = "https://staging.joinelevatenow.co.in/dashboard";
+    String dashboardUrl = "https://preweb.joinelevatenow.co.in/dashboard";
 
     test.log(LogStatus.INFO, "Verifying navigation to dashboard: " + dashboardUrl);
     driver.get(dashboardUrl);
@@ -203,7 +225,7 @@ public void navigationToDashboard() throws InterruptedException {
         System.out.println("Navigating to patient url");
         Thread.sleep(3000);
  // Navigate to Patients page
- String patientUrl = "https://staging.joinelevatenow.co.in/patient";
+ String patientUrl = "https://preweb.joinelevatenow.co.in/patient";
  test.log(LogStatus.INFO, "Navigating to Patients URL: " + patientUrl);
  driver.get(patientUrl);
     
@@ -211,7 +233,7 @@ public void navigationToDashboard() throws InterruptedException {
       System.out.println("Clicking on add patient button");
       WebElement nElement=driver.findElement(By.xpath("//*[@class='reusableBtnActive  reusableBtn']"));
       nElement.click();
-    driver.get("https://staging.joinelevatenow.co.in/patient/new");
+    driver.get("https://preweb.joinelevatenow.co.in/patient/new");
     System.out.println("Adding new  patient entry");
 
     WebElement fullname=driver.findElement(By.xpath("//*[@placeholder='Full Name']"));
@@ -223,20 +245,20 @@ public void navigationToDashboard() throws InterruptedException {
     WebElement Email=driver.findElement(By.xpath("//*[@placeholder='Email Address']"));
     Email.sendKeys(randomEmail);
     test.log(LogStatus.INFO, "Entered Email Address: " + randomEmail);
-    WebElement gender=driver.findElement(By.xpath("//*[@class='rs-picker-toggle rs-btn rs-btn-default']"));
-    gender.click();
-    Thread.sleep(3000);
+    // WebElement gender=driver.findElement(By.xpath("//*[@class='rs-picker-toggle rs-btn rs-btn-default']"));
+    // gender.click();
+    // Thread.sleep(3000);
    
-    test.log(LogStatus.INFO, "Opened Gender dropdown");
+    // test.log(LogStatus.INFO, "Opened Gender dropdown");
 
-    List<WebElement> genders=driver.findElements(By.xpath("//*[@class='rs-picker-select-menu-item']"));
-    for(WebElement elem:genders){
-        if(elem.getText().contains(randomgender));
-        elem.click();
-        test.log(LogStatus.INFO, "Selected Male gender");
-        break;
-    }
-    System.out.println("male selected");
+    // List<WebElement> genders=driver.findElements(By.xpath("//*[@class='rs-picker-select-menu-item']"));
+    // for(WebElement elem:genders){
+    //     if(elem.getText().contains(randomgender));
+    //     elem.click();
+    //     test.log(LogStatus.INFO, "Selected Male gender");
+    //     break;
+    // }
+    // System.out.println("male selected");
     WebElement SaveDetails=driver.findElement(By.xpath("//*[@class='form-control  coreBtn text-white undefined']"));
     SaveDetails.submit();
     test.log(LogStatus.INFO, "Clicked Save Details button");
@@ -248,7 +270,7 @@ public void navigationToDashboard() throws InterruptedException {
         String patientWeight=generateRandomWeight();
 
         System.out.println("Verifying the details of new added patient");
-        String patientListUrl = "https://staging.joinelevatenow.co.in/patient";
+        String patientListUrl = "https://preweb.joinelevatenow.co.in/patient";
 
         test.log(LogStatus.INFO, "Navigating to Patients page: " + patientListUrl);
         driver.get(patientListUrl);
@@ -264,7 +286,7 @@ public void navigationToDashboard() throws InterruptedException {
     String extractedPatientID = patientCountText.replaceAll("\\D+", ""); // Extracts the number only
     try {
         int patientIDInt = Integer.parseInt(extractedPatientID);
-        adjustedPatientID = String.valueOf(patientIDInt + 5); // Adjust logic as needed
+        adjustedPatientID = String.valueOf(patientIDInt+1953); // Adjust logic as needed
         test.log(LogStatus.INFO, "Extracted patient ID: " + extractedPatientID);
         test.log(LogStatus.INFO, "Calculated adjusted patient ID: " + adjustedPatientID);
     } catch (NumberFormatException e) {
@@ -294,7 +316,7 @@ public void navigationToDashboard() throws InterruptedException {
         test.log(LogStatus.ERROR, "No patients found or WebElement list is null.");
     }
         
-    String patientDashboardUrl = "https://staging.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
+    String patientDashboardUrl = "https://preweb.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
     test.log(LogStatus.INFO, "Verifying navigation to patient dashboard: " + patientDashboardUrl);
     driver.get(patientDashboardUrl);
     wait.until(ExpectedConditions.urlToBe(patientDashboardUrl));
@@ -313,7 +335,7 @@ Thread.sleep(3000);
     WebElement edit= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div"));
     edit.click();
 
-driver.get("https://staging.joinelevatenow.co.in/patient/"+adjustedPatientID+"/baselining");
+driver.get("https://preweb.joinelevatenow.co.in/patient/"+adjustedPatientID+"/baselining");
 Thread.sleep(5000);
     //Navigation to the patient details
     WebElement patientdetails=driver.findElement(By.xpath("//*[@id='root']/div[2]/div/div[1]/div[2]/div[2]/div[2]/div"));
@@ -349,13 +371,25 @@ Thread.sleep(5000);
  public void AddPrescription() throws InterruptedException, AWTException{
        // Login URL (assuming successful login from previous tests)
        String str1=generateRandomText(6);
-       String str2=generateRandomText(10);
-    String patientDashboardUrl = "https://staging.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
-    test = report.startTest("add prescription"); // Start the test
-
-    test.log(LogStatus.INFO, "Verifying navigation to patient dashboard: " + patientDashboardUrl);
-    driver.get(patientDashboardUrl);
-
+  String str2=generateRandomText(10);
+       Thread.sleep(3000);
+       driver.get("https://preweb.joinelevatenow.co.in/patient");
+       test.log(LogStatus.INFO, "Navigated to the Patient page");
+       Thread.sleep(3000);
+   
+       // Extract patient count from UI
+       WebElement patientCountElement = driver.findElement(By.xpath("//div[contains(text(),'all patients (')]"));
+       String patientCountText = patientCountElement.getText();
+       test.log(LogStatus.INFO, "Extracted patient count text: " + patientCountText);
+   
+       String extractedPatientID = patientCountText.replaceAll("\\D+", ""); // Extracts the number only
+       int patientIDInt = Integer.parseInt(extractedPatientID);
+       String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed
+   
+       String patientDashboardUrl = "https://preweb.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
+       test.log(LogStatus.INFO, "Navigating to patient dashboard: " + patientDashboardUrl);
+       driver.get(patientDashboardUrl);
+       Thread.sleep(4000);
 
     //verify patient details
     WebElement patientName=driver.findElement(By.xpath("//*[@class='card-title capitalize']"));
@@ -412,22 +446,27 @@ Thread.sleep(5000);
     test.log(LogStatus.INFO, "Entered Diagnosis: " +str1);
 
     // Select Medicine (consider using provided methods for selecting medicine)
-    WebElement selectMedicineElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div[1]/div/div/div"));
+    WebElement selectMedicineElement = driver.findElement(By.xpath("//span[text()='Search Medicine Name']"));
 selectMedicineElement.click();
+Thread.sleep(2000);
 
     WebElement searchMedicineField = driver.findElement(By.xpath("//*[@placeholder='Search']"));
-    String medicineName = "Tablet Nida New Test";
+    String medicineName = getRandomMedicine();
     searchMedicineField.sendKeys(medicineName);
     searchMedicineField.sendKeys(Keys.ENTER);
     test.log(LogStatus.INFO, "Entered medicine name: " + medicineName);
     // **Select medicine from search results (modify logic as needed)**
     Thread.sleep(2000);
     // Select Frequency (consider using provided methods for selecting frequency)
+    driver.findElement(By.xpath("//*[@placeholder='Course Duration ']")).sendKeys("30");
+    Thread.sleep(2000);
     WebElement frequencyElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[3]/div/select"));
     Select frequencySelect = new Select(frequencyElement);
     frequencySelect.selectByVisibleText("Daily");
     test.log(LogStatus.INFO, "Selected Frequency: Daily");
-
+driver.findElement((By.xpath("//label[text()='Morning']"))).click();
+test.log(LogStatus.INFO, "Selected Morning");
+Thread.sleep(2000);
     // Select Dosage (consider using provided methods for selecting dosage)
     WebElement dosageElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[4]/div/select"));
     Select dosageSelect = new Select(dosageElement);
@@ -438,6 +477,7 @@ selectMedicineElement.click();
 
     WebElement moreDetails= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[4]/div/div/textarea"));
     moreDetails.sendKeys(str2);
+    moreDetails.sendKeys(Keys.ENTER);
     test.log(LogStatus.INFO, "moredetails: "+ str2);
 Thread.sleep(2000);
     WebElement SaveDetails = driver.findElement(By.xpath("//div[text()='Save Details']"));
@@ -467,7 +507,7 @@ test.log(LogStatus.INFO, "click on publish element");
         alert.accept();
         Thread.sleep(10000);
     
- driver.get("https://staging.joinelevatenow.co.in/patient/"+adjustedPatientID+"/dashboard");
+ driver.get("https://preweb.joinelevatenow.co.in/patient/"+adjustedPatientID+"/dashboard");
 
     Thread.sleep(3000);
     }
@@ -476,7 +516,7 @@ test.log(LogStatus.INFO, "click on publish element");
         test.log(LogStatus.INFO, "Starting the onboardingDate test");
     
         Thread.sleep(3000);
-        driver.get("https://staging.joinelevatenow.co.in/patient");
+        driver.get("https://preweb.joinelevatenow.co.in/patient");
         test.log(LogStatus.INFO, "Navigated to the Patient page");
         Thread.sleep(3000);
     
@@ -487,14 +527,14 @@ test.log(LogStatus.INFO, "click on publish element");
     
         String extractedPatientID = patientCountText.replaceAll("\\D+", ""); // Extracts the number only
         int patientIDInt = Integer.parseInt(extractedPatientID);
-        String adjustedPatientID = String.valueOf(patientIDInt + 5); // Adjust logic as needed
+        String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed
     
-        String patientDashboardUrl = "https://staging.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
+        String patientDashboardUrl = "https://preweb.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
         test.log(LogStatus.INFO, "Navigating to patient dashboard: " + patientDashboardUrl);
         driver.get(patientDashboardUrl);
         Thread.sleep(4000);
     
-        driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div/div/span")).click();
+        driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/div[2]/div[3]/div/div[2]/div/div/span")).click();
         test.log(LogStatus.INFO, "Clicked on the calendar icon to select onboarding date");
         Thread.sleep(2000);
     
