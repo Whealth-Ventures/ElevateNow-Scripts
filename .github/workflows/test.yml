@@ -32,7 +32,7 @@ jobs:
         add-job-summary-as-pr-comment: on-failure
     - name: Run build with Gradle wrapper
       id: gradle
-      working-directory: .github/workflow-samples/kotlin-dsl
+      working-directory: /Users/indianrenters/Downloads/ElevateNow_Automationscripts/app/src/test
       run: ./gradlew build --scan
 
   failing-build-with-comment-on-failure:
@@ -46,6 +46,6 @@ jobs:
         add-job-summary-as-pr-comment: on-failure
     - name: Run build with Gradle wrapper
       id: gradle
-      working-directory: .github/workflow-samples/kotlin-dsl
+      working-directory: /Users/indianrenters/Downloads/ElevateNow_Automationscripts/app/src/test
       run: ./gradlew no-a-real-task --scan
       continue-on-error: true
