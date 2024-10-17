@@ -2,9 +2,10 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="org.example.Testcase1"></class>
-             <class name="org.example.Testcase2"></class>
-            <class name="org.example.TestCase3"></class>
+            <!-- <class name="org.example.Testcase1"></class>  
+           <class name="org.example.Testcase2"></class> 
+            <class name="org.example.TestCase3"></class>   -->
+            <class name="org.example.AppTest"></class>
         </classes>
     </test>
 </suite>

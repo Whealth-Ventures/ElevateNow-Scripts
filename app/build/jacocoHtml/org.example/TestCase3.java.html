@@ -200,16 +200,16 @@ import com.relevantcodes.extentreports.LogStatus;
 <span class="fc" id="L200">        List&lt;WebElement&gt; options = driver.findElements(By.className(&quot;rs-picker-select-menu-item&quot;));</span>
 <span class="fc" id="L201">        boolean goalFound = false;</span>
 <span class="pc bpc" id="L202" title="1 of 2 branches missed.">        for (WebElement option : options) {</span>
-<span class="pc bpc" id="L203" title="1 of 2 branches missed.">            if (option.getText().contains(&quot;Post Meal Walk&quot;)) {</span>
-<span class="fc" id="L204">                option.click();</span>
-<span class="fc" id="L205">                goalFound = true;</span>
-<span class="fc" id="L206">                test.log(LogStatus.INFO, &quot;Selected goal: Post Meal Walk&quot;);</span>
-<span class="fc" id="L207">                break;</span>
+<span class="nc bnc" id="L203" title="All 2 branches missed.">            if (option.getText().contains(&quot;Post Meal Walk&quot;)) {</span>
+<span class="nc" id="L204">                option.click();</span>
+<span class="nc" id="L205">                goalFound = true;</span>
+<span class="nc" id="L206">                test.log(LogStatus.INFO, &quot;Selected goal: Post Meal Walk&quot;);</span>
+<span class="nc" id="L207">                break;</span>
             }
 <span class="nc" id="L209">        }</span>
         
 <span class="pc bpc" id="L211" title="1 of 2 branches missed.">        if (!goalFound) {</span>
-<span class="nc" id="L212">            test.log(LogStatus.FAIL, &quot;Goal 'Post Meal Walk' not found.&quot;);</span>
+<span class="fc" id="L212">            test.log(LogStatus.FAIL, &quot;Goal 'Post Meal Walk' not found.&quot;);</span>
         }
     
 
@@ -448,157 +448,164 @@ public void addDietPlanToPatient() throws InterruptedException {
     
 <span class="fc" id="L449">        test.log(LogStatus.INFO, &quot;AddNotesToPatient test completed successfully&quot;);</span>
 <span class="fc" id="L450">    }</span>
-//     public void updateCallLogs() throws Exception {
-//         test = report.startTest(&quot;updateCallLogs&quot;); // Start the test
-//         test.log(LogStatus.INFO, &quot;Starting the updateCallLogs test&quot;);
+    public void updateCallLogs() throws Exception {
+<span class="nc" id="L452">        test = report.startTest(&quot;updateCallLogs&quot;); // Start the test</span>
+<span class="nc" id="L453">        test.log(LogStatus.INFO, &quot;Starting the updateCallLogs test&quot;);</span>
     
-//         Thread.sleep(3000);
-//         driver.get(&quot;https://preweb.joinelevatenow.co.in/patient&quot;);
-//         test.log(LogStatus.INFO, &quot;Navigated to the Patient page&quot;);
-//         Thread.sleep(3000);
+<span class="nc" id="L455">        Thread.sleep(3000);</span>
+<span class="nc" id="L456">        driver.get(&quot;https://staging.joinelevatenow.co.in/patient&quot;);</span>
+<span class="nc" id="L457">        test.log(LogStatus.INFO, &quot;Navigated to the Patient page&quot;);</span>
+<span class="nc" id="L458">        Thread.sleep(3000);</span>
     
-//         // Extract patient count from UI
-//         WebElement patientCountElement = driver.findElement(By.xpath(&quot;//div[contains(text(),'all patients (')]&quot;));
-//         String patientCountText = patientCountElement.getText();
-//         String extractedPatientID = patientCountText.replaceAll(&quot;\\D+&quot;, &quot;&quot;); // Extracts the number only
+        // Extract patient count from UI
+<span class="nc" id="L461">        WebElement patientCountElement = driver.findElement(By.xpath(&quot;//div[contains(text(),'all patients (')]&quot;));</span>
+<span class="nc" id="L462">        String patientCountText = patientCountElement.getText();</span>
+<span class="nc" id="L463">        String extractedPatientID = patientCountText.replaceAll(&quot;\\D+&quot;, &quot;&quot;); // Extracts the number only</span>
     
-//         int patientIDInt = Integer.parseInt(extractedPatientID);
-//         String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed
+<span class="nc" id="L465">        int patientIDInt = Integer.parseInt(extractedPatientID);</span>
+<span class="nc" id="L466">        String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed</span>
     
-//         String patientDashboardUrl = &quot;https://preweb.joinelevatenow.co.in/patient/&quot; + adjustedPatientID + &quot;/dashboard&quot;;
-//         test.log(LogStatus.INFO, &quot;Navigating to patient dashboard: &quot; + patientDashboardUrl);
-//         driver.get(patientDashboardUrl);
-//         Thread.sleep(4000);
+<span class="nc" id="L468">        String patientDashboardUrl = &quot;https://staging.joinelevatenow.co.in/patient/&quot; + adjustedPatientID + &quot;/dashboard&quot;;</span>
+<span class="nc" id="L469">        test.log(LogStatus.INFO, &quot;Navigating to patient dashboard: &quot; + patientDashboardUrl);</span>
+<span class="nc" id="L470">        driver.get(patientDashboardUrl);</span>
+<span class="nc" id="L471">        Thread.sleep(4000);</span>
     
-//         driver.findElement(By.xpath(&quot;//button[text()='Call Log']&quot;)).click();
-//         test.log(LogStatus.INFO, &quot;Clicked on 'Call Log' button&quot;);
-//         Thread.sleep(2000);
-//     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/span&quot;)).click();
-//     test.log(LogStatus.INFO, &quot;Clicked on 'Edit Details' button&quot;);
-//     Thread.sleep(2000);
-//     driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div/div[2]/div/div[1]/div/div[1]/form/div/div[10]/div&quot;)).click();
-//     test.log(LogStatus.INFO, &quot;Clicked on 'Save Details' button&quot;);
-//     Thread.sleep(2000);
-//     driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button&quot;)).click();
-//     test.log(LogStatus.INFO, &quot;Clicked on 'Call log' button&quot;);
-//     Thread.sleep(2000);
-// driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[4]/div/div[2]/span&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Edit Details' button&quot;);
-// Thread.sleep(4000);
-// driver.findElement(By.xpath(&quot;//*[@placeholder='medical condition']&quot;)).sendKeys(&quot;Obesity&quot;);
-// test.log(LogStatus.INFO, &quot;Entered 'Obesity' in the text area&quot;);
-// Thread.sleep(4000);
-// driver.findElement(By.xpath(&quot;//div[text()='Save Details']&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Save Details' button&quot;);
-// Thread.sleep(4000);
-// driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Call log' button&quot;);
-// Thread.sleep(2000);
-// driver.findElement(By.xpath(&quot;//a[text()='+ Add New Report']&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on '+ Add New Report' button&quot;);
-// Thread.sleep(2000);
-// driver.findElement(By.xpath(&quot;//*[@placeholder='Title']&quot;)).sendKeys(&quot;New Report&quot;);
-// test.log(LogStatus.INFO, &quot;Entered 'New Report' in the text area&quot;);
-// Thread.sleep(2000);
-// driver.findElement(By.xpath(&quot;//div[@class='form-control  coreBtn text-white undefined']&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Upload Report' button&quot;);
-// Thread.sleep(4000);
-// driver.findElement(By.xpath(&quot;//button[text()='Call Log']&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Call log' button&quot;);
-// Thread.sleep(2000);
-// driver.findElement(By.xpath(&quot;//a[text()='+ Add New Notes']&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on '+ Add New Notes' button&quot;);
-// Thread.sleep(2000);
-// driver.findElement(By.xpath(&quot;//span[text()='Select Category']&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Select Category' button&quot;);
-// Thread.sleep(2000);
-// driver.findElement(By.xpath(&quot;//span[@class='rs-picker-select-menu-item' and text()='Testing']&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Testing' button&quot;);
-// Thread.sleep(4000);
-// driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[2]/div[1]/div[3]/textarea&quot;)).sendKeys(&quot;sample notes&quot;);
-// test.log(LogStatus.INFO, &quot;Entered 'sample notes' in the text area&quot;);
-// Thread.sleep(2000);
-// driver.findElement(By.xpath(&quot;//div[text()='Submit']&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Save Notes' button&quot;);
-// Thread.sleep(4000);
-// driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button&quot;)).click();
-// test.log(LogStatus.INFO, &quot;Clicked on 'Call log' button&quot;);
-// Thread.sleep(2000);
+<span class="nc" id="L473">        driver.findElement(By.xpath(&quot;//button[text()='Call Log']&quot;)).click();</span>
+<span class="nc" id="L474">        test.log(LogStatus.INFO, &quot;Clicked on 'Call Log' button&quot;);</span>
+<span class="nc" id="L475">        Thread.sleep(2000);</span>
+<span class="nc" id="L476">    driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/span&quot;)).click();</span>
+<span class="nc" id="L477">    test.log(LogStatus.INFO, &quot;Clicked on 'Edit Details' button&quot;);</span>
+<span class="nc" id="L478">    Thread.sleep(2000);</span>
+<span class="nc" id="L479">    driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div/div[2]/div/div[1]/div/div[1]/form/div/div[10]/div&quot;)).click();</span>
+<span class="nc" id="L480">    test.log(LogStatus.INFO, &quot;Clicked on 'Save Details' button&quot;);</span>
+<span class="nc" id="L481">    Thread.sleep(2000);</span>
+<span class="nc" id="L482">    driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button&quot;)).click();</span>
+<span class="nc" id="L483">    test.log(LogStatus.INFO, &quot;Clicked on 'Call log' button&quot;);</span>
+<span class="nc" id="L484">    Thread.sleep(2000);</span>
+<span class="nc" id="L485">driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[4]/div/div[2]/span&quot;)).click();</span>
+<span class="nc" id="L486">test.log(LogStatus.INFO, &quot;Clicked on 'Edit Details' button&quot;);</span>
+<span class="nc" id="L487">Thread.sleep(4000);</span>
+<span class="nc" id="L488">driver.findElement(By.xpath(&quot;//*[@placeholder='medical condition']&quot;)).sendKeys(&quot;Obesity&quot;);</span>
+<span class="nc" id="L489">test.log(LogStatus.INFO, &quot;Entered 'Obesity' in the text area&quot;);</span>
+<span class="nc" id="L490">Thread.sleep(4000);</span>
+<span class="nc" id="L491">driver.findElement(By.xpath(&quot;//div[text()='Save Details']&quot;)).click();</span>
+<span class="nc" id="L492">test.log(LogStatus.INFO, &quot;Clicked on 'Save Details' button&quot;);</span>
+<span class="nc" id="L493">Thread.sleep(4000);</span>
+<span class="nc" id="L494">driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button&quot;)).click();</span>
+<span class="nc" id="L495">test.log(LogStatus.INFO, &quot;Clicked on 'Call log' button&quot;);</span>
+<span class="nc" id="L496">Thread.sleep(2000);</span>
+<span class="nc" id="L497">driver.findElement(By.xpath(&quot;//a[text()='+ Add New Report']&quot;)).click();</span>
+<span class="nc" id="L498">test.log(LogStatus.INFO, &quot;Clicked on '+ Add New Report' button&quot;);</span>
+<span class="nc" id="L499">Thread.sleep(2000);</span>
+<span class="nc" id="L500">driver.findElement(By.xpath(&quot;//*[@placeholder='Title']&quot;)).sendKeys(&quot;New Report&quot;);</span>
+<span class="nc" id="L501">test.log(LogStatus.INFO, &quot;Entered 'New Report' in the text area&quot;);</span>
+<span class="nc" id="L502">Thread.sleep(2000);</span>
+<span class="nc" id="L503">driver.findElement(By.xpath(&quot;//div[@class='form-control  coreBtn text-white undefined']&quot;)).click();</span>
+<span class="nc" id="L504">test.log(LogStatus.INFO, &quot;Clicked on 'Upload Report' button&quot;);</span>
+<span class="nc" id="L505">Thread.sleep(4000);</span>
+<span class="nc" id="L506">driver.findElement(By.xpath(&quot;//button[text()='Call Log']&quot;)).click();</span>
+<span class="nc" id="L507">test.log(LogStatus.INFO, &quot;Clicked on 'Call log' button&quot;);</span>
+<span class="nc" id="L508">Thread.sleep(2000);</span>
+<span class="nc" id="L509">driver.findElement(By.xpath(&quot;//a[text()='+ Add New Notes']&quot;)).click();</span>
+<span class="nc" id="L510">test.log(LogStatus.INFO, &quot;Clicked on '+ Add New Notes' button&quot;);</span>
+<span class="nc" id="L511">Thread.sleep(2000);</span>
+<span class="nc" id="L512">driver.findElement(By.xpath(&quot;//span[text()='Select Category']&quot;)).click();</span>
+<span class="nc" id="L513">test.log(LogStatus.INFO, &quot;Clicked on 'Select Category' button&quot;);</span>
+<span class="nc" id="L514">Thread.sleep(2000);</span>
+<span class="nc" id="L515">driver.findElement(By.xpath(&quot;//span[@class='rs-picker-select-menu-item' and text()='Testing']&quot;)).click();</span>
+<span class="nc" id="L516">test.log(LogStatus.INFO, &quot;Clicked on 'Testing' button&quot;);</span>
+<span class="nc" id="L517">Thread.sleep(4000);</span>
+<span class="nc" id="L518">driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[2]/div[1]/div[3]/textarea&quot;)).sendKeys(&quot;sample notes&quot;);</span>
+<span class="nc" id="L519">test.log(LogStatus.INFO, &quot;Entered 'sample notes' in the text area&quot;);</span>
+<span class="nc" id="L520">Thread.sleep(2000);</span>
+<span class="nc" id="L521">driver.findElement(By.xpath(&quot;//div[text()='Submit']&quot;)).click();</span>
+<span class="nc" id="L522">test.log(LogStatus.INFO, &quot;Clicked on 'Save Notes' button&quot;);</span>
+<span class="nc" id="L523">Thread.sleep(4000);</span>
+<span class="nc" id="L524">driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button&quot;)).click();</span>
+<span class="nc" id="L525">test.log(LogStatus.INFO, &quot;Clicked on 'Call log' button&quot;);</span>
+<span class="nc" id="L526">Thread.sleep(2000);</span>
 
 
-//         // test.log(LogStatus.INFO, &quot;Patient name, age, and gender: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[1]/div[2]/div[1]&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L529">        test.log(LogStatus.INFO, &quot;Patient name, age, and gender: &quot; + </span>
+<span class="nc" id="L530">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[1]/div[2]/div[1]&quot;)).getText());</span>
+<span class="nc" id="L531">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;Member details: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[2]/div[2]/div[1]&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L533">        test.log(LogStatus.INFO, &quot;Member details: &quot; + </span>
+<span class="nc" id="L534">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[2]/div[2]/div[1]&quot;)).getText());</span>
+<span class="nc" id="L535">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;Doctor's consultation details: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[3]/div[2]/div[2]&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L537">        test.log(LogStatus.INFO, &quot;Doctor's consultation details: &quot; + </span>
+<span class="nc" id="L538">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[3]/div[2]/div[2]&quot;)).getText());</span>
+<span class="nc" id="L539">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;Medical issue: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[4]/ul&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L541">        test.log(LogStatus.INFO, &quot;Medical issue: &quot; + </span>
+<span class="nc" id="L542">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[4]/ul&quot;)).getText());</span>
+<span class="nc" id="L543">        Thread.sleep(2000);</span>
     
-//         // // test.log(LogStatus.INFO, &quot;Medical History: &quot; + 
-//         // //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[5]/table/tr/td[1]&quot;)).getText());
-//         // // Thread.sleep(2000);
+<span class="nc" id="L545">        test.log(LogStatus.INFO, &quot;Medical History: &quot; + </span>
+<span class="nc" id="L546">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[5]/table/tr/td[1]&quot;)).getText());</span>
+<span class="nc" id="L547">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;View Notes: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[3]/div[3]/div/p&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L549">        test.log(LogStatus.INFO, &quot;View Notes: &quot; + </span>
+<span class="nc" id="L550">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[1]/div[3]/div[3]/div/p&quot;)).getText());</span>
+<span class="nc" id="L551">        Thread.sleep(2000);</span>
     
-//         test.log(LogStatus.INFO, &quot;Performance Adherence: &quot; + 
-//             driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[3]&quot;)).getText());
-//         Thread.sleep(2000);
+<span class="nc" id="L553">        test.log(LogStatus.INFO, &quot;Performance Adherence: &quot; + </span>
+<span class="nc" id="L554">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[3]&quot;)).getText());</span>
+<span class="nc" id="L555">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;Current date: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[1]/span&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L557">        test.log(LogStatus.INFO, &quot;Current date: &quot; + </span>
+<span class="nc" id="L558">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[1]/span&quot;)).getText());</span>
+<span class="nc" id="L559">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;Current weight: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[2]&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L561">        test.log(LogStatus.INFO, &quot;Current weight: &quot; + </span>
+<span class="nc" id="L562">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[2]&quot;)).getText());</span>
+<span class="nc" id="L563">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;Current BMI: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[3]&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L565">        test.log(LogStatus.INFO, &quot;Current BMI: &quot; + </span>
+<span class="nc" id="L566">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[3]&quot;)).getText());</span>
+<span class="nc" id="L567">        Thread.sleep(2000);</span>
     
-//         // // test.log(LogStatus.INFO, &quot;Start date: &quot; + 
-//         // //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[1]/span&quot;)).getText());
-//         // // Thread.sleep(2000);
+<span class="nc" id="L569">        test.log(LogStatus.INFO, &quot;Start date: &quot; + </span>
+<span class="nc" id="L570">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[1]/span&quot;)).getText());</span>
+<span class="nc" id="L571">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;Start weight: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[2]&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L573">        test.log(LogStatus.INFO, &quot;Start weight: &quot; + </span>
+<span class="nc" id="L574">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[2]&quot;)).getText());</span>
+<span class="nc" id="L575">        Thread.sleep(2000);</span>
     
-//         // test.log(LogStatus.INFO, &quot;Start BMI: &quot; + 
-//         //     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[3]&quot;)).getText());
-//         // Thread.sleep(2000);
+<span class="nc" id="L577">        test.log(LogStatus.INFO, &quot;Start BMI: &quot; + </span>
+<span class="nc" id="L578">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[3]&quot;)).getText());</span>
+<span class="nc" id="L579">        Thread.sleep(2000);</span>
     
-//         test.log(LogStatus.INFO, &quot;Call logs Details: &quot; + 
-//             driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[2]&quot;)).getText());
-//         Thread.sleep(2000);
-//     driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[2]/div[4]/button&quot;)).click();
-//         test.log(LogStatus.INFO, &quot;updateCallLogs test completed successfully&quot;);
-//         Thread.sleep(4000);
-//     }
+<span class="nc" id="L581">        test.log(LogStatus.INFO, &quot;Call logs Details: &quot; + </span>
+<span class="nc" id="L582">            driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[2]&quot;)).getText());</span>
+<span class="nc" id="L583">        Thread.sleep(2000);</span>
+<span class="nc" id="L584">    driver.findElement(By.xpath(&quot;//*[@id='offcanvasRight']/div[2]/div/div[2]/div[2]/div[4]/button&quot;)).click();</span>
+<span class="nc" id="L585">        test.log(LogStatus.INFO, &quot;updateCallLogs test completed successfully&quot;);</span>
+<span class="nc" id="L586">        Thread.sleep(4000);</span>
+<span class="nc" id="L587">    }</span>
     
-    @Test(description=&quot;Adding goals,diet plan and notes to patient dashboard&quot;)
+ @Test(description=&quot;Adding goals,diet plan and notes to patient dashboard&quot;)
     public void testCase3() throws Exception{
     
 <span class="fc" id="L592">        TestCase3 test=new TestCase3();</span>
 <span class="fc" id="L593">        test.setup();</span>
-<span class="fc" id="L594">        test.login();</span>
-<span class="fc" id="L595">        test.GoalCreations();</span>
-<span class="fc" id="L596">        test.addGoalToPatientDashboard();</span>
-<span class="fc" id="L597">        test.addDietPlan();</span>
-<span class="fc" id="L598">        test.addDietPlanToPatient();</span>
-<span class="fc" id="L599">        test.AddNotesToPatient();</span>
-// test.updateCallLogs();
-<span class="fc" id="L601">        test.tearDown();</span>
-<span class="fc" id="L602">            }</span>
+<span class="fc" id="L594">        Thread.sleep(2000);</span>
+<span class="fc" id="L595">    test.login();</span>
+<span class="fc" id="L596">    Thread.sleep(2000);</span>
+<span class="fc" id="L597">        test.GoalCreations();</span>
+<span class="fc" id="L598">        Thread.sleep(2000);</span>
+<span class="fc" id="L599">        test.addGoalToPatientDashboard();</span>
+<span class="fc" id="L600">        Thread.sleep(2000);</span>
+<span class="fc" id="L601">        test.addDietPlan();</span>
+<span class="fc" id="L602">        Thread.sleep(2000);</span>
+<span class="fc" id="L603">        test.addDietPlanToPatient();</span>
+<span class="fc" id="L604">        Thread.sleep(2000);</span>
+<span class="fc" id="L605">        test.AddNotesToPatient();</span>
+<span class="fc" id="L606">        Thread.sleep(2000);</span>
+ // test.updateCallLogs();
+<span class="fc" id="L608">        test.tearDown();</span>
+<span class="fc" id="L609">            }</span>
         }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

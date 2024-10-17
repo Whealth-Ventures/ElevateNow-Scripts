@@ -80,7 +80,7 @@ public class Testcase2 {
 
         // Wait for 30 seconds to manually enter the OTP
             
-            Thread.sleep(30000);
+            Thread.sleep(35000);
             WebElement sendOtp=driver.findElement(By.xpath("//*[@class='form-control  coreBtn text-white false']"));
             sendOtp.click();
             Thread.sleep(3000);
@@ -147,7 +147,7 @@ Thread.sleep(3000);
     driver.findElement(By.xpath(("//*[@placeholder='Search']"))).sendKeys("Weight");
         List<WebElement> goals = driver.findElements(By.className("rs-highlight"));
         for (WebElement goal : goals) {
-            if (goal.getText().contains("Weight")) {
+            if (goal.getText().equals("Weight")) {
                 Thread.sleep(2000);
                 goal.click();
                 test.log(LogStatus.INFO, "Selected Goal: Weight");
@@ -437,10 +437,15 @@ Thread.sleep(3000);
     
         Testcase2 test=new Testcase2();
         test.setup();
+        Thread.sleep(2000);
         test.login();
+        Thread.sleep(2000);
         test.RegimeQuestions();
+        Thread.sleep(2000);
         test.addRegimeTemplate();
+        Thread.sleep(2000);
         test.updateRegime();
+        Thread.sleep(2000);
         test.tearDown();
             }
         }

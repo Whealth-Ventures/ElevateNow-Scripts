@@ -448,156 +448,163 @@ public void addDietPlanToPatient() throws InterruptedException {
     
         test.log(LogStatus.INFO, "AddNotesToPatient test completed successfully");
     }
-//     public void updateCallLogs() throws Exception {
-//         test = report.startTest("updateCallLogs"); // Start the test
-//         test.log(LogStatus.INFO, "Starting the updateCallLogs test");
+    public void updateCallLogs() throws Exception {
+        test = report.startTest("updateCallLogs"); // Start the test
+        test.log(LogStatus.INFO, "Starting the updateCallLogs test");
     
-//         Thread.sleep(3000);
-//         driver.get("https://preweb.joinelevatenow.co.in/patient");
-//         test.log(LogStatus.INFO, "Navigated to the Patient page");
-//         Thread.sleep(3000);
+        Thread.sleep(3000);
+        driver.get("https://staging.joinelevatenow.co.in/patient");
+        test.log(LogStatus.INFO, "Navigated to the Patient page");
+        Thread.sleep(3000);
     
-//         // Extract patient count from UI
-//         WebElement patientCountElement = driver.findElement(By.xpath("//div[contains(text(),'all patients (')]"));
-//         String patientCountText = patientCountElement.getText();
-//         String extractedPatientID = patientCountText.replaceAll("\\D+", ""); // Extracts the number only
+        // Extract patient count from UI
+        WebElement patientCountElement = driver.findElement(By.xpath("//div[contains(text(),'all patients (')]"));
+        String patientCountText = patientCountElement.getText();
+        String extractedPatientID = patientCountText.replaceAll("\\D+", ""); // Extracts the number only
     
-//         int patientIDInt = Integer.parseInt(extractedPatientID);
-//         String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed
+        int patientIDInt = Integer.parseInt(extractedPatientID);
+        String adjustedPatientID = String.valueOf(patientIDInt + 1953); // Adjust logic as needed
     
-//         String patientDashboardUrl = "https://preweb.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
-//         test.log(LogStatus.INFO, "Navigating to patient dashboard: " + patientDashboardUrl);
-//         driver.get(patientDashboardUrl);
-//         Thread.sleep(4000);
+        String patientDashboardUrl = "https://staging.joinelevatenow.co.in/patient/" + adjustedPatientID + "/dashboard";
+        test.log(LogStatus.INFO, "Navigating to patient dashboard: " + patientDashboardUrl);
+        driver.get(patientDashboardUrl);
+        Thread.sleep(4000);
     
-//         driver.findElement(By.xpath("//button[text()='Call Log']")).click();
-//         test.log(LogStatus.INFO, "Clicked on 'Call Log' button");
-//         Thread.sleep(2000);
-//     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/span")).click();
-//     test.log(LogStatus.INFO, "Clicked on 'Edit Details' button");
-//     Thread.sleep(2000);
-//     driver.findElement(By.xpath("//*[@id='root']/div[2]/div/div[2]/div/div[1]/div/div[1]/form/div/div[10]/div")).click();
-//     test.log(LogStatus.INFO, "Clicked on 'Save Details' button");
-//     Thread.sleep(2000);
-//     driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button")).click();
-//     test.log(LogStatus.INFO, "Clicked on 'Call log' button");
-//     Thread.sleep(2000);
-// driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[4]/div/div[2]/span")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Edit Details' button");
-// Thread.sleep(4000);
-// driver.findElement(By.xpath("//*[@placeholder='medical condition']")).sendKeys("Obesity");
-// test.log(LogStatus.INFO, "Entered 'Obesity' in the text area");
-// Thread.sleep(4000);
-// driver.findElement(By.xpath("//div[text()='Save Details']")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Save Details' button");
-// Thread.sleep(4000);
-// driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Call log' button");
-// Thread.sleep(2000);
-// driver.findElement(By.xpath("//a[text()='+ Add New Report']")).click();
-// test.log(LogStatus.INFO, "Clicked on '+ Add New Report' button");
-// Thread.sleep(2000);
-// driver.findElement(By.xpath("//*[@placeholder='Title']")).sendKeys("New Report");
-// test.log(LogStatus.INFO, "Entered 'New Report' in the text area");
-// Thread.sleep(2000);
-// driver.findElement(By.xpath("//div[@class='form-control  coreBtn text-white undefined']")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Upload Report' button");
-// Thread.sleep(4000);
-// driver.findElement(By.xpath("//button[text()='Call Log']")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Call log' button");
-// Thread.sleep(2000);
-// driver.findElement(By.xpath("//a[text()='+ Add New Notes']")).click();
-// test.log(LogStatus.INFO, "Clicked on '+ Add New Notes' button");
-// Thread.sleep(2000);
-// driver.findElement(By.xpath("//span[text()='Select Category']")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Select Category' button");
-// Thread.sleep(2000);
-// driver.findElement(By.xpath("//span[@class='rs-picker-select-menu-item' and text()='Testing']")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Testing' button");
-// Thread.sleep(4000);
-// driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[2]/div[1]/div[3]/textarea")).sendKeys("sample notes");
-// test.log(LogStatus.INFO, "Entered 'sample notes' in the text area");
-// Thread.sleep(2000);
-// driver.findElement(By.xpath("//div[text()='Submit']")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Save Notes' button");
-// Thread.sleep(4000);
-// driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button")).click();
-// test.log(LogStatus.INFO, "Clicked on 'Call log' button");
-// Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[text()='Call Log']")).click();
+        test.log(LogStatus.INFO, "Clicked on 'Call Log' button");
+        Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/span")).click();
+    test.log(LogStatus.INFO, "Clicked on 'Edit Details' button");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='root']/div[2]/div/div[2]/div/div[1]/div/div[1]/form/div/div[10]/div")).click();
+    test.log(LogStatus.INFO, "Clicked on 'Save Details' button");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button")).click();
+    test.log(LogStatus.INFO, "Clicked on 'Call log' button");
+    Thread.sleep(2000);
+driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[4]/div/div[2]/span")).click();
+test.log(LogStatus.INFO, "Clicked on 'Edit Details' button");
+Thread.sleep(4000);
+driver.findElement(By.xpath("//*[@placeholder='medical condition']")).sendKeys("Obesity");
+test.log(LogStatus.INFO, "Entered 'Obesity' in the text area");
+Thread.sleep(4000);
+driver.findElement(By.xpath("//div[text()='Save Details']")).click();
+test.log(LogStatus.INFO, "Clicked on 'Save Details' button");
+Thread.sleep(4000);
+driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button")).click();
+test.log(LogStatus.INFO, "Clicked on 'Call log' button");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//a[text()='+ Add New Report']")).click();
+test.log(LogStatus.INFO, "Clicked on '+ Add New Report' button");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//*[@placeholder='Title']")).sendKeys("New Report");
+test.log(LogStatus.INFO, "Entered 'New Report' in the text area");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//div[@class='form-control  coreBtn text-white undefined']")).click();
+test.log(LogStatus.INFO, "Clicked on 'Upload Report' button");
+Thread.sleep(4000);
+driver.findElement(By.xpath("//button[text()='Call Log']")).click();
+test.log(LogStatus.INFO, "Clicked on 'Call log' button");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//a[text()='+ Add New Notes']")).click();
+test.log(LogStatus.INFO, "Clicked on '+ Add New Notes' button");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//span[text()='Select Category']")).click();
+test.log(LogStatus.INFO, "Clicked on 'Select Category' button");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//span[@class='rs-picker-select-menu-item' and text()='Testing']")).click();
+test.log(LogStatus.INFO, "Clicked on 'Testing' button");
+Thread.sleep(4000);
+driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[2]/div[1]/div[3]/textarea")).sendKeys("sample notes");
+test.log(LogStatus.INFO, "Entered 'sample notes' in the text area");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//div[text()='Submit']")).click();
+test.log(LogStatus.INFO, "Clicked on 'Save Notes' button");
+Thread.sleep(4000);
+driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/button")).click();
+test.log(LogStatus.INFO, "Clicked on 'Call log' button");
+Thread.sleep(2000);
 
 
-//         // test.log(LogStatus.INFO, "Patient name, age, and gender: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[1]/div[2]/div[1]")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Patient name, age, and gender: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[1]/div[2]/div[1]")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "Member details: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[2]/div[2]/div[1]")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Member details: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[2]/div[2]/div[1]")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "Doctor's consultation details: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[3]/div[2]/div[2]")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Doctor's consultation details: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[3]/div[2]/div[2]")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "Medical issue: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[4]/ul")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Medical issue: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[4]/ul")).getText());
+        Thread.sleep(2000);
     
-//         // // test.log(LogStatus.INFO, "Medical History: " + 
-//         // //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[5]/table/tr/td[1]")).getText());
-//         // // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Medical History: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[1]/div[5]/table/tr/td[1]")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "View Notes: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[3]/div[3]/div/p")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "View Notes: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[1]/div[3]/div[3]/div/p")).getText());
+        Thread.sleep(2000);
     
-//         test.log(LogStatus.INFO, "Performance Adherence: " + 
-//             driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[3]")).getText());
-//         Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Performance Adherence: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[3]")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "Current date: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[1]/span")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Current date: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[1]/span")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "Current weight: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[2]")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Current weight: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[2]")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "Current BMI: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[3]")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Current BMI: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[2]/td[3]")).getText());
+        Thread.sleep(2000);
     
-//         // // test.log(LogStatus.INFO, "Start date: " + 
-//         // //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[1]/span")).getText());
-//         // // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Start date: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[1]/span")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "Start weight: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[2]")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Start weight: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[2]")).getText());
+        Thread.sleep(2000);
     
-//         // test.log(LogStatus.INFO, "Start BMI: " + 
-//         //     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[3]")).getText());
-//         // Thread.sleep(2000);
+        test.log(LogStatus.INFO, "Start BMI: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[1]/div[1]/table/tr[3]/td[3]")).getText());
+        Thread.sleep(2000);
     
-//         test.log(LogStatus.INFO, "Call logs Details: " + 
-//             driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[2]")).getText());
-//         Thread.sleep(2000);
-//     driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[2]/div[4]/button")).click();
-//         test.log(LogStatus.INFO, "updateCallLogs test completed successfully");
-//         Thread.sleep(4000);
-//     }
+        test.log(LogStatus.INFO, "Call logs Details: " + 
+            driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[2]")).getText());
+        Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='offcanvasRight']/div[2]/div/div[2]/div[2]/div[4]/button")).click();
+        test.log(LogStatus.INFO, "updateCallLogs test completed successfully");
+        Thread.sleep(4000);
+    }
     
-    @Test(description="Adding goals,diet plan and notes to patient dashboard")
+ @Test(description="Adding goals,diet plan and notes to patient dashboard")
     public void testCase3() throws Exception{
     
         TestCase3 test=new TestCase3();
         test.setup();
-        test.login();
+        Thread.sleep(2000);
+    test.login();
+    Thread.sleep(2000);
         test.GoalCreations();
+        Thread.sleep(2000);
         test.addGoalToPatientDashboard();
+        Thread.sleep(2000);
         test.addDietPlan();
+        Thread.sleep(2000);
         test.addDietPlanToPatient();
+        Thread.sleep(2000);
         test.AddNotesToPatient();
-// test.updateCallLogs();
+        Thread.sleep(2000);
+ // test.updateCallLogs();
         test.tearDown();
             }
         }

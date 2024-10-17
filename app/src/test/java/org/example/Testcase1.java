@@ -1,6 +1,7 @@
 package org.example;
 
 import java.awt.AWTException;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
@@ -30,14 +31,18 @@ public class Testcase1 {
     static ExtentTest test;
 
  
-    public void setup(){
+    public void setup() throws IOException{
         System.out.println("Initializing the driver");
         //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-                  // Extent Reports configuration
+    //     // driver.get("www.google.com");
+    //        File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    //    Files.copy(f, new File("/Users/indianrenters/Downloads/ElevateNow_Automationscripts/screenshot/file.png"));
+    //               // Extent Reports configuration
                   report=new ExtentReports("/Users/indianrenters/Downloads/ElevateNow_Automationscripts/report/index.html",true);
-                 // test =report.startTest("ElevateNow Test Suite");
+                  test =report.startTest("ElevateNow Test Suite");
        driver.manage().window().maximize();
+       
     }
 
     public void tearDown(){
@@ -87,8 +92,7 @@ public class Testcase1 {
             "Cream/Ointment Melalumin Ultra",
             "Tablet Nurokind Next",
             "Tablet Concor COR 2.5 Table",
-            "Tablet GLUXIT M 10/500",
-            "Injection APIDRA (GLULISINE)"
+            "Tablet GLUXIT M 10/500"
         };
 
         Random random = new Random();
@@ -168,7 +172,7 @@ private static String generateRandomAge() {
         phoneInput.sendKeys(mobileNumber);
 
         // Wait for 30 seconds to manually enter the OTP
-            Thread.sleep(30000);
+            Thread.sleep(35000);
             
             WebElement sendOtp=driver.findElement(By.xpath("//*[@class='form-control  coreBtn text-white false']"));
             sendOtp.click();
@@ -326,13 +330,13 @@ String doctorname=generateandomDoctor();
   WebElement assignDoctor=driver.findElement(By.xpath("//*[@placeholder='Assign Doctor/Health Coach']"));
   assignDoctor.sendKeys(doctorname);
   Thread.sleep(2000);
-  WebElement doctor= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[2]/div[1]/div[1]"));
+  WebElement doctor= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div[1]"));
   doctor.click();
 
 Thread.sleep(3000);
 
   
-    WebElement edit= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div"));
+    WebElement edit= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[4]/div[1]/div/div"));
     edit.click();
 
 driver.get("https://preweb.joinelevatenow.co.in/patient/"+adjustedPatientID+"/baselining");
@@ -357,7 +361,7 @@ Thread.sleep(5000);
     targetWeight.sendKeys(patientWeight);
     age.sendKeys(Keys.ENTER);
     test.log(LogStatus.INFO, "Weight");
-    WebElement weight=driver.findElement(By.xpath("//*[@placeholder='start weight']"));
+    WebElement weight=driver.findElement(By.xpath("//*[@placeholder='weight']"));
     weight.clear();
     weight.sendKeys(generateRandomWeight());
     test.log(LogStatus.INFO, "Weight");
@@ -395,19 +399,19 @@ Thread.sleep(5000);
     WebElement patientName=driver.findElement(By.xpath("//*[@class='card-title capitalize']"));
     String patientNameText=patientName.getText();
     test.log(LogStatus.INFO, "Patient Name: " + patientNameText);
-    System.out.println(patientNameText);
-    Thread.sleep(2000);
-    WebElement patientAge=driver.findElement(By.xpath("//*[@class='card-text capitalize']"));
-    String patientAgeText=patientAge.getText();
-    System.out.println(patientAgeText);
-    Thread.sleep(2000);
-    WebElement mobiledetails=driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[2]/div[3]"));
-    String mobileNumber= mobiledetails.getText();
-    System.out.println(mobileNumber);
-    Thread.sleep(2000);
-    WebElement email=driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[2]/div[4]"));
-    String emailId=email.getText();
-    System.out.println(emailId);
+    // System.out.println(patientNameText);
+    // Thread.sleep(2000);
+    // WebElement patientAge=driver.findElement(By.xpath("//*[@class='card-text capitalize']"));
+    // String patientAgeText=patientAge.getText();
+    // System.out.println(patientAgeText);
+    // Thread.sleep(2000);
+    // WebElement mobiledetails=driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[2]/div[3]"));
+    // String mobileNumber= mobiledetails.getText();
+    // System.out.println(mobileNumber);
+    // Thread.sleep(2000);
+    // WebElement email=driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div[2]/div[4]"));
+    // String emailId=email.getText();
+    // System.out.println(emailId);
     Thread.sleep(2000);
 
 
@@ -477,7 +481,7 @@ Thread.sleep(2000);
 
     WebElement moreDetails= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[4]/div/div/textarea"));
     moreDetails.sendKeys(str2);
-    moreDetails.sendKeys(Keys.ENTER);
+    
     test.log(LogStatus.INFO, "moredetails: "+ str2);
 Thread.sleep(2000);
     WebElement SaveDetails = driver.findElement(By.xpath("//div[text()='Save Details']"));
@@ -534,7 +538,7 @@ test.log(LogStatus.INFO, "click on publish element");
         driver.get(patientDashboardUrl);
         Thread.sleep(4000);
     
-        driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/div[2]/div[3]/div/div[2]/div/div/span")).click();
+        driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[4]/div/div[2]/div/div/span")).click();
         test.log(LogStatus.INFO, "Clicked on the calendar icon to select onboarding date");
         Thread.sleep(2000);
     
@@ -564,12 +568,18 @@ test.log(LogStatus.INFO, "click on publish element");
     
 Testcase1 test=new Testcase1();
 test.setup();
+Thread.sleep(2000);
 test.login();
+Thread.sleep(2000);
 test.navigationToDashboard();
+Thread.sleep(2000);
 test.AddNewPatient();
+Thread.sleep(2000);
 test.UserDetails();
-test.onboardingDate();
+Thread.sleep(2000);
+//test.onboardingDate();
 test.AddPrescription();
+Thread.sleep(2000);
 test.tearDown();
     }
 }
