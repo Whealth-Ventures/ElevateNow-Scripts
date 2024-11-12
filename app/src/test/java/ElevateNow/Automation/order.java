@@ -227,7 +227,17 @@ public void addOrder() throws InterruptedException{
      Thread.sleep(3000);
      driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/span")).click();
      Thread.sleep(3000);
+     for(int i=0;i<=60;i++){
+        driver.findElement(By.xpath("//button[text()='+']")).click();
+        Thread.sleep(1000);
+        if(driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr/td[5]/span")).getText().contains(("60"))){
+            System.out.println("Cannot exceeds quantity to more than 60");
+            break;
+        }
+     }
+
 }
+
  @AfterClass
     public void tearDown() {
       driver.close();

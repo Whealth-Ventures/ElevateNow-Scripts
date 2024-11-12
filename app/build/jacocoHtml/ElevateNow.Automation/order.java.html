@@ -227,12 +227,22 @@ public void addOrder() throws InterruptedException{
 <span class="fc" id="L227">     Thread.sleep(3000);</span>
 <span class="fc" id="L228">     driver.findElement(By.xpath(&quot;/html/body/div[2]/div[2]/div[1]/span&quot;)).click();</span>
 <span class="fc" id="L229">     Thread.sleep(3000);</span>
-<span class="fc" id="L230">}</span>
+<span class="pc bpc" id="L230" title="1 of 2 branches missed.">     for(int i=0;i&lt;=60;i++){</span>
+<span class="fc" id="L231">        driver.findElement(By.xpath(&quot;//button[text()='+']&quot;)).click();</span>
+<span class="fc" id="L232">        Thread.sleep(1000);</span>
+<span class="fc bfc" id="L233" title="All 2 branches covered.">        if(driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr/td[5]/span&quot;)).getText().contains((&quot;60&quot;))){</span>
+<span class="fc" id="L234">            System.out.println(&quot;Cannot exceeds quantity to more than 60&quot;);</span>
+<span class="fc" id="L235">            break;</span>
+        }
+     }
+
+<span class="fc" id="L239">}</span>
+
  @AfterClass
     public void tearDown() {
-<span class="fc" id="L233">      driver.close();</span>
-<span class="fc" id="L234">        driver.quit();</span>
-<span class="fc" id="L235">    }</span>
+<span class="fc" id="L243">      driver.close();</span>
+<span class="fc" id="L244">        driver.quit();</span>
+<span class="fc" id="L245">    }</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
