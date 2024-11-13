@@ -227,21 +227,44 @@ public void addOrder() throws InterruptedException{
      Thread.sleep(3000);
      driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/span")).click();
      Thread.sleep(3000);
-     for(int i=0;i<=60;i++){
-        driver.findElement(By.xpath("//button[text()='+']")).click();
-        Thread.sleep(1000);
-        if(driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr/td[5]/span")).getText().contains(("60"))){
-            System.out.println("Cannot exceeds quantity to more than 60");
-            break;
-        }
-     }
+     int previousQuantity = 0; // Track the last known quantity
+     int currentQuantity;
+     
+     while (true) {
+         // Click the "+" button to increment quantity
+         driver.findElement(By.xpath("//button[text()='+']")).click();
+         Thread.sleep(1000);
+     
+
+         // Get the updated quantity as an integer
+         String quantity=driver.findElement(By.xpath("//span[@class='medicine-quant']")).getText();
+         currentQuantity = Integer.parseInt(quantity);
+     
+         // Check if the quantity has stopped increasing
+         if (currentQuantity == previousQuantity) {
+             System.out.println("Limit reached: " + currentQuantity);
+             break;
+         }
+     
+         // Update previous quantity for the next iteration
+         previousQuantity = currentQuantity;
 
 }
 
+// driver.findElement(By.xpath("//*[@placeholder='Discount %']")).sendKeys("20");
+Thread.sleep(4000);
+// driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[2]/div[2]/input")).sendKeys("100");
+// Thread.sleep(2000);
+// String total=driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div[2]/div/div[3]/div/div/div[5]/div[2]")).getText();
+// System.out.println(total);
+// Thread.sleep(2000);
+// next.click();
+}
  @AfterClass
     public void tearDown() {
       driver.close();
         driver.quit();
     }
 }
+
 

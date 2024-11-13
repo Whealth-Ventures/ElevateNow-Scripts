@@ -227,22 +227,45 @@ public void addOrder() throws InterruptedException{
 <span class="fc" id="L227">     Thread.sleep(3000);</span>
 <span class="fc" id="L228">     driver.findElement(By.xpath(&quot;/html/body/div[2]/div[2]/div[1]/span&quot;)).click();</span>
 <span class="fc" id="L229">     Thread.sleep(3000);</span>
-<span class="pc bpc" id="L230" title="1 of 2 branches missed.">     for(int i=0;i&lt;=60;i++){</span>
-<span class="fc" id="L231">        driver.findElement(By.xpath(&quot;//button[text()='+']&quot;)).click();</span>
-<span class="fc" id="L232">        Thread.sleep(1000);</span>
-<span class="fc bfc" id="L233" title="All 2 branches covered.">        if(driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr/td[5]/span&quot;)).getText().contains((&quot;60&quot;))){</span>
-<span class="fc" id="L234">            System.out.println(&quot;Cannot exceeds quantity to more than 60&quot;);</span>
-<span class="fc" id="L235">            break;</span>
-        }
-     }
+<span class="fc" id="L230">     int previousQuantity = 0; // Track the last known quantity</span>
+     int currentQuantity;
+     
+     while (true) {
+         // Click the &quot;+&quot; button to increment quantity
+<span class="fc" id="L235">         driver.findElement(By.xpath(&quot;//button[text()='+']&quot;)).click();</span>
+<span class="fc" id="L236">         Thread.sleep(1000);</span>
+     
 
-<span class="fc" id="L239">}</span>
+         // Get the updated quantity as an integer
+<span class="fc" id="L240">         String quantity=driver.findElement(By.xpath(&quot;//span[@class='medicine-quant']&quot;)).getText();</span>
+<span class="fc" id="L241">         currentQuantity = Integer.parseInt(quantity);</span>
+     
+         // Check if the quantity has stopped increasing
+<span class="fc bfc" id="L244" title="All 2 branches covered.">         if (currentQuantity == previousQuantity) {</span>
+<span class="fc" id="L245">             System.out.println(&quot;Limit reached: &quot; + currentQuantity);</span>
+<span class="fc" id="L246">             break;</span>
+         }
+     
+         // Update previous quantity for the next iteration
+<span class="fc" id="L250">         previousQuantity = currentQuantity;</span>
 
+<span class="fc" id="L252">}</span>
+
+// driver.findElement(By.xpath(&quot;//*[@placeholder='Discount %']&quot;)).sendKeys(&quot;20&quot;);
+<span class="fc" id="L255">Thread.sleep(4000);</span>
+// driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[2]/div[2]/input&quot;)).sendKeys(&quot;100&quot;);
+// Thread.sleep(2000);
+// String total=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div[2]/div/div[3]/div/div/div[5]/div[2]&quot;)).getText();
+// System.out.println(total);
+// Thread.sleep(2000);
+// next.click();
+<span class="fc" id="L262">}</span>
  @AfterClass
     public void tearDown() {
-<span class="fc" id="L243">      driver.close();</span>
-<span class="fc" id="L244">        driver.quit();</span>
-<span class="fc" id="L245">    }</span>
+<span class="fc" id="L265">      driver.close();</span>
+<span class="fc" id="L266">        driver.quit();</span>
+<span class="fc" id="L267">    }</span>
 }
+
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
