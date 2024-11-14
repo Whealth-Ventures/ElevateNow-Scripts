@@ -251,13 +251,16 @@ public void addOrder() throws InterruptedException{
 
 }
 
-// driver.findElement(By.xpath("//*[@placeholder='Discount %']")).sendKeys("20");
+
 Thread.sleep(4000);
-// driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[2]/div[2]/input")).sendKeys("100");
-// Thread.sleep(2000);
+// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+// WebElement discountInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='root']/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr/td[6]/div[2]/input")));
+// discountInput.clear();
+// discountInput.sendKeys("20");
+// Thread.sleep(5000);
 // String total=driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div[2]/div/div[3]/div/div/div[5]/div[2]")).getText();
 // System.out.println(total);
-// Thread.sleep(2000);
+// Thread.sleep(4000);
 // next.click();
 }
  @AfterClass
