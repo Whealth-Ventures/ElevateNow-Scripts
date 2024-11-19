@@ -1,6 +1,7 @@
 package ElevateNow.Automation;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -23,6 +24,7 @@ String fullText="";
 public void setup() throws InterruptedException{
     driver=new ChromeDriver();
     driver.manage().window().maximize(); 
+    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); 
 }
 @Test(priority=2,groups="initialise")
 public void login() throws InterruptedException{
@@ -85,95 +87,95 @@ System.out.println("Extracted Name: " + name);
         Thread.sleep(2000);
         prescription.click();
       
-        WebElement newPresElement=driver.findElement(By.xpath("//*[@class='btn mt-3 btn-outline-primary']"));
-        Thread.sleep(2000);
-        // js.executeScript("arguments[0].scrollIntoView(true);", newPresElement);
-        newPresElement.click();
+//         WebElement newPresElement=driver.findElement(By.xpath("//*[@class='btn mt-3 btn-outline-primary']"));
+//         Thread.sleep(2000);
+//         // js.executeScript("arguments[0].scrollIntoView(true);", newPresElement);
+//         newPresElement.click();
 
-        Thread.sleep(5000);
+//         Thread.sleep(5000);
 
-     // Select Doctor
-    WebElement selectDoctorElement = driver.findElement(By.xpath("//span[text()='Select Doctor']"));
-    selectDoctorElement.click();
-    Thread.sleep(2000);
+//      // Select Doctor
+//     WebElement selectDoctorElement = driver.findElement(By.xpath("//span[text()='Select Doctor']"));
+//     selectDoctorElement.click();
+//     Thread.sleep(2000);
 
 
-    WebElement selectDoctor = driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/span"));
-    Thread.sleep(2000);
-    selectDoctor.click();
+//     WebElement selectDoctor = driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/span"));
+//     Thread.sleep(2000);
+//     selectDoctor.click();
 
      
-      // Enter Diagnosis
-    WebElement diagnosisField = driver.findElement(By.xpath("//*[@placeholder='Diagnosis']"));
-    Thread.sleep(2000);
-    diagnosisField.sendKeys("obesity");
+//       // Enter Diagnosis
+//     WebElement diagnosisField = driver.findElement(By.xpath("//*[@placeholder='Diagnosis']"));
+//     Thread.sleep(2000);
+//     diagnosisField.sendKeys("obesity");
 
 
-    // Select Medicine (consider using provided methods for selecting medicine)
-    WebElement selectMedicineElement = driver.findElement(By.xpath("//span[text()='Search Medicine Name']"));
-selectMedicineElement.click();
-Thread.sleep(2000);
+//     // Select Medicine (consider using provided methods for selecting medicine)
+//     WebElement selectMedicineElement = driver.findElement(By.xpath("//span[text()='Search Medicine Name']"));
+// selectMedicineElement.click();
+// Thread.sleep(2000);
 
-    WebElement searchMedicineField = driver.findElement(By.xpath("//*[@placeholder='Search']"));
-    String medicineName = "Tablet Ayaan";
-    searchMedicineField.sendKeys(medicineName);
-    Thread.sleep(2000);
-    // searchMedicineField.sendKeys(Keys.ENTER);
-     Thread.sleep(4000);
-//    driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/span")).click();
-    // **Select medicine from search results (modify logic as needed)**
-    Thread.sleep(2000);
-    // Select Frequency (consider using provided methods for selecting frequency)
-    driver.findElement(By.xpath("//*[@placeholder='Course Duration ']")).sendKeys("30");
-    Thread.sleep(2000);
-    WebElement frequencyElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[3]/div/select"));
-    Select frequencySelect = new Select(frequencyElement);
-    frequencySelect.selectByVisibleText("Daily");
+//     WebElement searchMedicineField = driver.findElement(By.xpath("//*[@placeholder='Search']"));
+//     String medicineName = "Tablet Ayaan";
+//     searchMedicineField.sendKeys(medicineName);
+//     Thread.sleep(2000);
+//     // searchMedicineField.sendKeys(Keys.ENTER);
+//      Thread.sleep(4000);
+// //    driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/span")).click();
+//     // **Select medicine from search results (modify logic as needed)**
+//     Thread.sleep(2000);
+//     // Select Frequency (consider using provided methods for selecting frequency)
+//     driver.findElement(By.xpath("//*[@placeholder='Course Duration ']")).sendKeys("30");
+//     Thread.sleep(2000);
+//     WebElement frequencyElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[3]/div/select"));
+//     Select frequencySelect = new Select(frequencyElement);
+//     frequencySelect.selectByVisibleText("Daily");
 
-driver.findElement((By.xpath("//label[text()='Morning']"))).click();
+// driver.findElement((By.xpath("//label[text()='Morning']"))).click();
 
-Thread.sleep(2000);
-    // Select Dosage (consider using provided methods for selecting dosage)
-    WebElement dosageElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[4]/div/select"));
-    Select dosageSelect = new Select(dosageElement);
-    dosageSelect.selectByVisibleText("1");
+// Thread.sleep(2000);
+//     // Select Dosage (consider using provided methods for selecting dosage)
+//     WebElement dosageElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[4]/div/select"));
+//     Select dosageSelect = new Select(dosageElement);
+//     dosageSelect.selectByVisibleText("1");
   
 
 
 
-    WebElement moreDetails= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[4]/div/div/textarea"));
-    moreDetails.sendKeys("details");
+//     WebElement moreDetails= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[4]/div/div/textarea"));
+//     moreDetails.sendKeys("details");
     
  
-Thread.sleep(2000);
-    WebElement SaveDetails = driver.findElement(By.xpath("//div[text()='Save Details']"));
-    Thread.sleep(2000);
-    SaveDetails.click();
+// Thread.sleep(2000);
+//     WebElement SaveDetails = driver.findElement(By.xpath("//div[text()='Save Details']"));
+//     Thread.sleep(2000);
+//     SaveDetails.click();
     
-    Thread.sleep(6000);
+//     Thread.sleep(6000);
    
-   WebElement publiElement= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[3]/div[1]/div/div/div[1]/div[2]/div[5]/div/span"));
-   Thread.sleep(2000);
-   publiElement.click();
-   Thread.sleep(2000);
-      WebElement publish =driver.findElement(By.xpath("//*[@class='rs-btn rs-btn-primary']"));
-      Thread.sleep(2000);
-    publish.click();
+//    WebElement publiElement= driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div[3]/div[1]/div/div/div[1]/div[2]/div[5]/div/span"));
+//    Thread.sleep(2000);
+//    publiElement.click();
+//    Thread.sleep(2000);
+//       WebElement publish =driver.findElement(By.xpath("//*[@class='rs-btn rs-btn-primary']"));
+//       Thread.sleep(2000);
+//     publish.click();
  
-    //Alert handling
-     // Switch the focus to the alert
-        Alert alert = driver.switchTo().alert();
+//     //Alert handling
+//      // Switch the focus to the alert
+//         Alert alert = driver.switchTo().alert();
 
-        // Get the text of the alert (optional)
-        String alertText = alert.getText();
-        System.out.println("Alert Text: " + alertText);
+//         // Get the text of the alert (optional)
+//         String alertText = alert.getText();
+//         System.out.println("Alert Text: " + alertText);
 
-        // Accept the alert (click OK)
-        alert.accept();
-        Thread.sleep(10000);
+//         // Accept the alert (click OK)
+//         alert.accept();
+//         Thread.sleep(10000);
 }
 
-@Test(priority=4,description="adding order for patient")
+//@Test(priority=4,description="adding order for patient")
 public void addOrder() throws InterruptedException{
     driver.get("https://preweb.joinelevatenow.co.in/orders");
     Thread.sleep(6000);
@@ -264,6 +266,62 @@ Thread.sleep(5000);
 // System.out.println(total);
 driver.findElement(By.xpath("//button[text()='Next']")).click();
 Thread.sleep(5000);
+}
+
+//Adding order history from patient dashboard
+@Test(description = "Adding order history from patient dashboard",priority = 5)
+public void addOrderfromDashboard() throws InterruptedException{
+    driver.get("https://preweb.joinelevatenow.co.in/patient");
+    Thread.sleep(5000);
+    // driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[1]/div/div[2]/a")).click();
+    // Thread.sleep(4000);
+    driver.findElement(By.xpath("//*[@placeholder='Search a patient by name or mobile number']")).sendKeys("Jane Austen");
+    Thread.sleep(2000);
+driver.findElement(By.xpath("//*[@id=\"Patients-item-0\"]")).click();
+Thread.sleep(4000);
+driver.findElement(By.xpath("//div[text()='Order']")).click();
+Thread.sleep(4000);
+driver.findElement(By.xpath("//div[text()='Add Order']")).click();
+Thread.sleep(4000);
+driver.findElement(By.xpath("//*[@name='address']")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath("//button[text()='Next']")).click();
+Thread.sleep(4000);
+String text=driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div[2]/div/div[1]/div[1]/div[1]")).getText();
+System.out.println("Source is : "+text);
+Thread.sleep(4000);
+driver.findElement(By.xpath("//div[text()='View Prescription']")).click();
+Thread.sleep(4000);
+String medicineName=driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[2]/div/div[1]/div/div/div[5]/div/div[2]/div[1]/div[1]/span")).getText();
+System.out.println("Medicine Name is : "+medicineName);
+Thread.sleep(4000);
+driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[1]/button")).click();
+Thread.sleep(4000);
+driver.findElement(By.xpath("//span[text()='Select']")).click();
+Thread.sleep(4000);
+driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/span")).click();
+Thread.sleep(4000);
+WebElement addnewMedicine=driver.findElement(By.xpath("//button[text()='+ Add Another Medicine']"));
+addnewMedicine.click();
+Thread.sleep(4000);
+driver.findElement(By.xpath("//*[@placeholder='Search medicine']")).sendKeys("Tablet paracetamol");
+Thread.sleep(8000);
+//driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr[3]/td[2]/div/div[1]/div[2]/a[1]")).click();
+//Thread.sleep(4000);
+driver.findElement(By.xpath("//span[text()='Select']")).click();
+Thread.sleep(4000);
+driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/span")).click();
+Thread.sleep(4000);
+driver.findElement(By.xpath("//*[@placeholder='Discount %']")).sendKeys("20");
+
+//verify the count as zero
+while(true){
+    driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[5]/button[1]")).click();
+    break;
+
+
+}
+
 }
  @AfterClass
     public void tearDown() {
