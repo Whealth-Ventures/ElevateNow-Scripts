@@ -169,7 +169,7 @@ System.out.println("Extracted Name: " + name);
 //         // Get the text of the alert (optional)
 //         String alertText = alert.getText();
 //         System.out.println("Alert Text: " + alertText);
-
+ 
 //         // Accept the alert (click OK)
 //         alert.accept();
 //         Thread.sleep(10000);
@@ -266,6 +266,42 @@ Thread.sleep(5000);
 // System.out.println(total);
 driver.findElement(By.xpath("//button[text()='Next']")).click();
 Thread.sleep(5000);
+driver.findElement(By.xpath("//div[text()='Record Payment']")).click();
+WebElement selectMode=driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[2]/div/div/div/div[2]/div[1]/div/select"));
+Select select=new Select(selectMode);
+select.selectByVisibleText("Online");
+Thread.sleep(3000);
+WebElement SelectForm=driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[2]/div/div/div/div[2]/div[2]/div/select"));
+Select selectForm=new Select(SelectForm);
+selectForm.selectByVisibleText("UPI");
+Thread.sleep(3000);
+WebElement paymentWith=driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[2]/div/div/div/div[2]/div[4]/div/select"));
+Select selectPayment=new Select(paymentWith);
+selectPayment.selectByVisibleText("Elton");
+Thread.sleep(3000);
+driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[2]/div/div/div/div[2]/div[6]/div/div")).click();
+Thread.sleep(6000);
+driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div[2]/div[2]/table/tbody/tr[1]/td[9]/button")).click();
+Thread.sleep(3000);
+driver.findElement(By.xpath("//span[text()='View Details']")).click();
+Thread.sleep(5000);
+String currentStatus=driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[3]/div/div[2]/p/div/span")).getText();
+System.out.println("Current Status: " +currentStatus);
+String orderID=driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[3]/div/div[2]/div/div[1]/div[1]")).getText();
+System.out.println("Order ID: " +orderID);
+
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[3]/div/div[4]/table/tbody/tr/td[9]/div/div/div[1]/span")).click();
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[3]/div/div[4]/table/tbody/tr/td[9]/div/div/div[2]/ul/li[3]/span")).click();
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[3]/div/div[4]/table/tbody/tr/td[10]/button[1]")).click();
+Thread.sleep(3000);
+String UpdatedStatus=driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[3]/div/div[2]/p/div/span")).getText();
+System.out.println("Updated Status: "+UpdatedStatus);
+Thread.sleep(8000);
+driver.findElement(By.xpath("//button[text()='Download']")).click();
+Thread.sleep(10000);
 }
 
 //Adding order history from patient dashboard

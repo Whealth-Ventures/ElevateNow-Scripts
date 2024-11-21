@@ -169,7 +169,7 @@ public void addPrescription() throws InterruptedException{
 //         // Get the text of the alert (optional)
 //         String alertText = alert.getText();
 //         System.out.println(&quot;Alert Text: &quot; + alertText);
-
+ 
 //         // Accept the alert (click OK)
 //         alert.accept();
 //         Thread.sleep(10000);
@@ -266,68 +266,104 @@ public void addOrder() throws InterruptedException{
 // System.out.println(total);
 <span class="fc" id="L267">driver.findElement(By.xpath(&quot;//button[text()='Next']&quot;)).click();</span>
 <span class="fc" id="L268">Thread.sleep(5000);</span>
-<span class="fc" id="L269">}</span>
+<span class="fc" id="L269">driver.findElement(By.xpath(&quot;//div[text()='Record Payment']&quot;)).click();</span>
+<span class="fc" id="L270">WebElement selectMode=driver.findElement(By.xpath(&quot;/html/body/div[3]/div/div/div/div[2]/div/div/div/div[2]/div[1]/div/select&quot;));</span>
+<span class="fc" id="L271">Select select=new Select(selectMode);</span>
+<span class="fc" id="L272">select.selectByVisibleText(&quot;Online&quot;);</span>
+<span class="fc" id="L273">Thread.sleep(3000);</span>
+<span class="fc" id="L274">WebElement SelectForm=driver.findElement(By.xpath(&quot;/html/body/div[3]/div/div/div/div[2]/div/div/div/div[2]/div[2]/div/select&quot;));</span>
+<span class="fc" id="L275">Select selectForm=new Select(SelectForm);</span>
+<span class="fc" id="L276">selectForm.selectByVisibleText(&quot;UPI&quot;);</span>
+<span class="fc" id="L277">Thread.sleep(3000);</span>
+<span class="fc" id="L278">WebElement paymentWith=driver.findElement(By.xpath(&quot;/html/body/div[3]/div/div/div/div[2]/div/div/div/div[2]/div[4]/div/select&quot;));</span>
+<span class="fc" id="L279">Select selectPayment=new Select(paymentWith);</span>
+<span class="fc" id="L280">selectPayment.selectByVisibleText(&quot;Elton&quot;);</span>
+<span class="fc" id="L281">Thread.sleep(3000);</span>
+<span class="fc" id="L282">driver.findElement(By.xpath(&quot;/html/body/div[3]/div/div/div/div[2]/div/div/div/div[2]/div[6]/div/div&quot;)).click();</span>
+<span class="fc" id="L283">Thread.sleep(6000);</span>
+<span class="fc" id="L284">driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[1]/div[2]/div[2]/table/tbody/tr[1]/td[9]/button&quot;)).click();</span>
+<span class="fc" id="L285">Thread.sleep(3000);</span>
+<span class="fc" id="L286">driver.findElement(By.xpath(&quot;//span[text()='View Details']&quot;)).click();</span>
+<span class="fc" id="L287">Thread.sleep(5000);</span>
+<span class="fc" id="L288">String currentStatus=driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[3]/div/div[2]/p/div/span&quot;)).getText();</span>
+<span class="fc" id="L289">System.out.println(&quot;Current Status: &quot; +currentStatus);</span>
+<span class="fc" id="L290">String orderID=driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[3]/div/div[2]/div/div[1]/div[1]&quot;)).getText();</span>
+<span class="fc" id="L291">System.out.println(&quot;Order ID: &quot; +orderID);</span>
+
+<span class="fc" id="L293">Thread.sleep(3000);</span>
+<span class="fc" id="L294">driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[3]/div/div[4]/table/tbody/tr/td[9]/div/div/div[1]/span&quot;)).click();</span>
+<span class="fc" id="L295">Thread.sleep(3000);</span>
+<span class="fc" id="L296">driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[3]/div/div[4]/table/tbody/tr/td[9]/div/div/div[2]/ul/li[3]/span&quot;)).click();</span>
+<span class="fc" id="L297">Thread.sleep(3000);</span>
+<span class="fc" id="L298">driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[3]/div/div[4]/table/tbody/tr/td[10]/button[1]&quot;)).click();</span>
+<span class="fc" id="L299">Thread.sleep(3000);</span>
+<span class="fc" id="L300">String UpdatedStatus=driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[3]/div/div[2]/p/div/span&quot;)).getText();</span>
+<span class="fc" id="L301">System.out.println(&quot;Updated Status: &quot;+UpdatedStatus);</span>
+<span class="fc" id="L302">Thread.sleep(8000);</span>
+<span class="fc" id="L303">driver.findElement(By.xpath(&quot;//button[text()='Download']&quot;)).click();</span>
+<span class="fc" id="L304">Thread.sleep(10000);</span>
+<span class="fc" id="L305">}</span>
 
 //Adding order history from patient dashboard
 @Test(description = &quot;Adding order history from patient dashboard&quot;,priority = 5)
 public void addOrderfromDashboard() throws InterruptedException{
-<span class="fc" id="L274">    driver.get(&quot;https://preweb.joinelevatenow.co.in/patient&quot;);</span>
-<span class="fc" id="L275">    Thread.sleep(5000);</span>
+<span class="fc" id="L310">    driver.get(&quot;https://preweb.joinelevatenow.co.in/patient&quot;);</span>
+<span class="fc" id="L311">    Thread.sleep(5000);</span>
     // driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[1]/div/div[2]/a&quot;)).click();
     // Thread.sleep(4000);
-<span class="fc" id="L278">    driver.findElement(By.xpath(&quot;//*[@placeholder='Search a patient by name or mobile number']&quot;)).sendKeys(&quot;Jane Austen&quot;);</span>
-<span class="fc" id="L279">    Thread.sleep(2000);</span>
-<span class="fc" id="L280">driver.findElement(By.xpath(&quot;//*[@id=\&quot;Patients-item-0\&quot;]&quot;)).click();</span>
-<span class="fc" id="L281">Thread.sleep(4000);</span>
-<span class="fc" id="L282">driver.findElement(By.xpath(&quot;//div[text()='Order']&quot;)).click();</span>
-<span class="fc" id="L283">Thread.sleep(4000);</span>
-<span class="fc" id="L284">driver.findElement(By.xpath(&quot;//div[text()='Add Order']&quot;)).click();</span>
-<span class="fc" id="L285">Thread.sleep(4000);</span>
-<span class="fc" id="L286">driver.findElement(By.xpath(&quot;//*[@name='address']&quot;)).click();</span>
-<span class="fc" id="L287">Thread.sleep(2000);</span>
-<span class="fc" id="L288">driver.findElement(By.xpath(&quot;//button[text()='Next']&quot;)).click();</span>
-<span class="fc" id="L289">Thread.sleep(4000);</span>
-<span class="fc" id="L290">String text=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div[2]/div/div[1]/div[1]/div[1]&quot;)).getText();</span>
-<span class="fc" id="L291">System.out.println(&quot;Source is : &quot;+text);</span>
-<span class="fc" id="L292">Thread.sleep(4000);</span>
-<span class="fc" id="L293">driver.findElement(By.xpath(&quot;//div[text()='View Prescription']&quot;)).click();</span>
-<span class="fc" id="L294">Thread.sleep(4000);</span>
-<span class="fc" id="L295">String medicineName=driver.findElement(By.xpath(&quot;/html/body/div[3]/div/div/div/div[2]/div/div[1]/div/div/div[5]/div/div[2]/div[1]/div[1]/span&quot;)).getText();</span>
-<span class="fc" id="L296">System.out.println(&quot;Medicine Name is : &quot;+medicineName);</span>
-<span class="fc" id="L297">Thread.sleep(4000);</span>
-<span class="fc" id="L298">driver.findElement(By.xpath(&quot;/html/body/div[3]/div/div/div/div[1]/button&quot;)).click();</span>
-<span class="fc" id="L299">Thread.sleep(4000);</span>
-<span class="fc" id="L300">driver.findElement(By.xpath(&quot;//span[text()='Select']&quot;)).click();</span>
-<span class="fc" id="L301">Thread.sleep(4000);</span>
-<span class="fc" id="L302">driver.findElement(By.xpath(&quot;/html/body/div[2]/div[2]/div[2]/span&quot;)).click();</span>
-<span class="fc" id="L303">Thread.sleep(4000);</span>
-<span class="fc" id="L304">WebElement addnewMedicine=driver.findElement(By.xpath(&quot;//button[text()='+ Add Another Medicine']&quot;));</span>
-<span class="fc" id="L305">addnewMedicine.click();</span>
-<span class="fc" id="L306">Thread.sleep(4000);</span>
-<span class="fc" id="L307">driver.findElement(By.xpath(&quot;//*[@placeholder='Search medicine']&quot;)).sendKeys(&quot;Tablet&quot;);</span>
-<span class="fc" id="L308">Thread.sleep(8000);</span>
+<span class="fc" id="L314">    driver.findElement(By.xpath(&quot;//*[@placeholder='Search a patient by name or mobile number']&quot;)).sendKeys(&quot;Jane Austen&quot;);</span>
+<span class="fc" id="L315">    Thread.sleep(2000);</span>
+<span class="fc" id="L316">driver.findElement(By.xpath(&quot;//*[@id=\&quot;Patients-item-0\&quot;]&quot;)).click();</span>
+<span class="fc" id="L317">Thread.sleep(4000);</span>
+<span class="fc" id="L318">driver.findElement(By.xpath(&quot;//div[text()='Order']&quot;)).click();</span>
+<span class="fc" id="L319">Thread.sleep(4000);</span>
+<span class="fc" id="L320">driver.findElement(By.xpath(&quot;//div[text()='Add Order']&quot;)).click();</span>
+<span class="fc" id="L321">Thread.sleep(4000);</span>
+<span class="fc" id="L322">driver.findElement(By.xpath(&quot;//*[@name='address']&quot;)).click();</span>
+<span class="fc" id="L323">Thread.sleep(2000);</span>
+<span class="fc" id="L324">driver.findElement(By.xpath(&quot;//button[text()='Next']&quot;)).click();</span>
+<span class="fc" id="L325">Thread.sleep(4000);</span>
+<span class="fc" id="L326">String text=driver.findElement(By.xpath(&quot;//*[@id='root']/div[2]/div[2]/div[2]/div/div[1]/div[1]/div[1]&quot;)).getText();</span>
+<span class="fc" id="L327">System.out.println(&quot;Source is : &quot;+text);</span>
+<span class="fc" id="L328">Thread.sleep(4000);</span>
+<span class="fc" id="L329">driver.findElement(By.xpath(&quot;//div[text()='View Prescription']&quot;)).click();</span>
+<span class="fc" id="L330">Thread.sleep(4000);</span>
+<span class="fc" id="L331">String medicineName=driver.findElement(By.xpath(&quot;/html/body/div[3]/div/div/div/div[2]/div/div[1]/div/div/div[5]/div/div[2]/div[1]/div[1]/span&quot;)).getText();</span>
+<span class="fc" id="L332">System.out.println(&quot;Medicine Name is : &quot;+medicineName);</span>
+<span class="fc" id="L333">Thread.sleep(4000);</span>
+<span class="fc" id="L334">driver.findElement(By.xpath(&quot;/html/body/div[3]/div/div/div/div[1]/button&quot;)).click();</span>
+<span class="fc" id="L335">Thread.sleep(4000);</span>
+<span class="fc" id="L336">driver.findElement(By.xpath(&quot;//span[text()='Select']&quot;)).click();</span>
+<span class="fc" id="L337">Thread.sleep(4000);</span>
+<span class="fc" id="L338">driver.findElement(By.xpath(&quot;/html/body/div[2]/div[2]/div[2]/span&quot;)).click();</span>
+<span class="fc" id="L339">Thread.sleep(4000);</span>
+<span class="fc" id="L340">WebElement addnewMedicine=driver.findElement(By.xpath(&quot;//button[text()='+ Add Another Medicine']&quot;));</span>
+<span class="fc" id="L341">addnewMedicine.click();</span>
+<span class="fc" id="L342">Thread.sleep(4000);</span>
+<span class="fc" id="L343">driver.findElement(By.xpath(&quot;//*[@placeholder='Search medicine']&quot;)).sendKeys(&quot;Tablet&quot;);</span>
+<span class="fc" id="L344">Thread.sleep(8000);</span>
 //driver.findElement(By.xpath(&quot;/html/body/div/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr[3]/td[2]/div/div[1]/div[2]/a[1]&quot;)).click();
 //Thread.sleep(4000);
-<span class="fc" id="L311">driver.findElement(By.xpath(&quot;//span[text()='Select']&quot;)).click();</span>
-<span class="fc" id="L312">Thread.sleep(4000);</span>
-<span class="fc" id="L313">driver.findElement(By.xpath(&quot;/html/body/div[2]/div[2]/div/span&quot;)).click();</span>
-<span class="fc" id="L314">Thread.sleep(4000);</span>
-<span class="fc" id="L315">driver.findElement(By.xpath(&quot;//*[@placeholder='Discount %']&quot;)).sendKeys(&quot;20&quot;);</span>
+<span class="fc" id="L347">driver.findElement(By.xpath(&quot;//span[text()='Select']&quot;)).click();</span>
+<span class="fc" id="L348">Thread.sleep(4000);</span>
+<span class="fc" id="L349">driver.findElement(By.xpath(&quot;/html/body/div[2]/div[2]/div/span&quot;)).click();</span>
+<span class="fc" id="L350">Thread.sleep(4000);</span>
+<span class="fc" id="L351">driver.findElement(By.xpath(&quot;//*[@placeholder='Discount %']&quot;)).sendKeys(&quot;20&quot;);</span>
 
 //verify the count as zero
 while(true){
-<span class="fc" id="L319">    driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[5]/button[1]&quot;)).click();</span>
+<span class="fc" id="L355">    driver.findElement(By.xpath(&quot;//*[@id=\&quot;root\&quot;]/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[5]/button[1]&quot;)).click();</span>
     break;
 
 
 }
 
-<span class="fc" id="L325">}</span>
+<span class="fc" id="L361">}</span>
  @AfterClass
     public void tearDown() {
-<span class="fc" id="L328">      driver.close();</span>
-<span class="fc" id="L329">        driver.quit();</span>
-<span class="fc" id="L330">    }</span>
+<span class="fc" id="L364">      driver.close();</span>
+<span class="fc" id="L365">        driver.quit();</span>
+<span class="fc" id="L366">    }</span>
 }
 
 
