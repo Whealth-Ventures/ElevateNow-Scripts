@@ -175,7 +175,7 @@ System.out.println("Extracted Name: " + name);
 //         Thread.sleep(10000);
 }
 
-//@Test(priority=4,description="adding order for patient")
+@Test(priority=4,description="adding order for patient")
 public void addOrder() throws InterruptedException{
     driver.get("https://preweb.joinelevatenow.co.in/orders");
     Thread.sleep(6000);
@@ -304,7 +304,7 @@ Thread.sleep(4000);
 WebElement addnewMedicine=driver.findElement(By.xpath("//button[text()='+ Add Another Medicine']"));
 addnewMedicine.click();
 Thread.sleep(4000);
-driver.findElement(By.xpath("//*[@placeholder='Search medicine']")).sendKeys("Tablet paracetamol");
+driver.findElement(By.xpath("//*[@placeholder='Search medicine']")).sendKeys("Tablet");
 Thread.sleep(8000);
 //driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div[2]/div/div[2]/table/tbody/tr[3]/td[2]/div/div[1]/div[2]/a[1]")).click();
 //Thread.sleep(4000);
